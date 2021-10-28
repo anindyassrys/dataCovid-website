@@ -55,7 +55,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     # 'main',
+=======
+    'main',
+    'rujukan',
+>>>>>>> 49e772db5efd47827bfb99f1432ebcf8742e1391
     'kewaspadaan',
     'Home',
     'datacovid',
