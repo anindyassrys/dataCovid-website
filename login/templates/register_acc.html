@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html>
     
@@ -22,13 +25,13 @@
 						{% csrf_token %}
                         <div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-solid fa-user-pen"></i></span>
+								<span class="input-group-text"><i class="fas fa-solid fa-user-plus"></i></span>
 							</div>
 							{{form.first_name}}
 						</div>
                         <div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fa-solid fa-user-pen"></i></span>
+								<span class="input-group-text"><i class="fas fa-solid fa-user-plus"></i></span>
 							</div>
 							{{form.last_name}}
 						</div>
@@ -70,7 +73,7 @@
 				
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+						Already have an account? <a href="{% url 'login_acc' %}" class="ml-2">Login</a>
 					</div>
 				</div>
 			</div>
@@ -90,3 +93,4 @@
 	</script>
 </body>
 </html>
+{% endblock %}

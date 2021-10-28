@@ -26,11 +26,11 @@ def regisPage(request):
 				user = form.cleaned_data.get('username')
 				messages.success(request, 'Account was created for ' + user)
 
-				return redirect('login')
+				return redirect('login:login')
 			
 
 		context = {'form':form}
-		return render(request, 'register.html', context)
+		return render(request, 'register_acc.html', context)
 
 def loginPage(request):
 	if request.user.is_authenticated:
@@ -49,7 +49,7 @@ def loginPage(request):
 				messages.info(request, 'Username or password is incorrect')
 
 		context = {}
-		return render(request, 'login.html', context)
+		return render(request, 'login_acc.html', context)
 
 def logoutUser(request):
 	logout(request)
