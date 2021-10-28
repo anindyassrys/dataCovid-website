@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'rujukan',
+    'kewaspadaan',
+    'Home',
+    'datacovid',
 ]
 
 MIDDLEWARE = [

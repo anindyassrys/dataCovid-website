@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-import rujukan.urls as rsrujukan
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('rumah-sakit-rujukan/', include(rsrujukan)),
+    path('rumah-sakit-rujukan', include('rujukan.urls')),
+    path('main', include('main.urls')),
+    path('kewaspadaan', include('kewaspadaan.urls')),
+    path('home', include('Home.urls')),
+    path('data-covid', include('datacovid.urls')),
 ]
