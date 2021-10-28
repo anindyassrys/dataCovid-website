@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'main',
     'kewaspadaan',
     'Home',
+    'datacovid',
 ]
 
 MIDDLEWARE = [
