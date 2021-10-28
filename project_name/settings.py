@@ -55,10 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+    # 'main',
     'kewaspadaan',
     'Home',
     'datacovid',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -150,6 +151,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
 # This is the directory for storing `collectstatic` results.
 # This shouldn't be included in your Git repository.
