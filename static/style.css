@@ -1,0 +1,47 @@
+html, body
+{
+    margin: 0px;
+    font-family: 'Sora', sans-serif;
+}
+
+.navbar-brand
+{
+    font: 18px Sora;
+    font-weight: 600;
+}
+div.container-fluid
+{
+    margin: 0 auto;
+	padding: 3px 0px;
+	text-align: center;
+}
+
+div.container-fluid a
+{
+    color: #353535;
+    text-decoration: none;
+    font: 16px Sora;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+div.pullUp a:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: rgb(172, 172, 172);
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullUp a:hover:before
+{
+    height: 100%;
+}
