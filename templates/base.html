@@ -42,8 +42,8 @@
       </div>
       <div>
         {% if user.is_authenticated %}
-        <li class="hello-msg">Hello, {{request.user}}</li>
-        <li ><a  class="hello-msg" href="{% url 'login:logout' %}" style="color: #026670;">Logout</a></li>
+        <span class="hello-msg">Hello, {{request.user}}</span>
+        <span ><a  class="hello-msg" href="{% url 'login:logout' %}" style="color: #026670;">Logout</a></span>
         {% else %}
         <ul class="nav justify-content-end">
           <li class="nav-item">
