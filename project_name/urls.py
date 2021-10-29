@@ -16,17 +16,17 @@ Including another URLconf
 from django.contrib import admin
 import diskusi.urls as diskusi_urls
 from django.urls import include, path, re_path
-from Home.views import index as Home
+from home.views import index as home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rumah-sakit-rujukan/', include('rujukan.urls')),
     path('main', include('main.urls')),
     path('kewaspadaan', include('kewaspadaan.urls')),
-    path('home', include('Home.urls')),
+    path('home', include('home.urls')),
     path('diskusi/', include(diskusi_urls)),
     path('data-covid', include('datacovid.urls')),
     path('vaksinasi', include('vaksinasi.urls')),
     path('', include('login.urls', 'login')),
-    re_path(r'^$', Home, name='home')
+    re_path(r'^$', home, name='home')
 ]
