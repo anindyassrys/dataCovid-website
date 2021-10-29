@@ -20,5 +20,11 @@ from diskusi import urls as diskusi_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('diskusi/', include(diskusi_urls))
+    path('diskusi/', include(diskusi_urls)),
+    path('rumah-sakit-rujukan/', include('rujukan.urls')),
+    path('main', include('main.urls')),
+    path('kewaspadaan', include('kewaspadaan.urls')),
+    path('home', include('Home.urls')),
+    path('data-covid', include('datacovid.urls')),
+    path('', include('login.urls', 'login'))
 ]

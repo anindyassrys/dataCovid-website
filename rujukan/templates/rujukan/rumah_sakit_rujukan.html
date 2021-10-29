@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title> | Rumah Sakit Rujukan</title>
+<!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+
+	#content {
+		max-width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#listRS>div {
+		border-style: solid;
+		border-color: black;
+		background-color: lightgray;
+		margin: 8px;
+	}
+
+	#listRS>div>div {
+	padding: 8px;
+	}
+
+	
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+<h1>Rumah Sakit Rujukan</h1>
+
+<label>Wilayah:</label>
+	
+<select id="wilayah">
+	<option value="" selected>-- Silakan pilih --</option>
+	{% for wilayah in dwilayah %}
+		<option value="{{ wilayah.wid }}">{{ wilayah.nama }}</option>
+	{% endfor %}
+</select>
+<div id="listRS"></div>
+</div>
+
+<script>
+
+	$(document).ready(function(){
+		$("#listRS>div").hide();
+
+		$("select").change(function () {
+
+			$("#listRS").html(
+				"{% for rs in drs %}\
+				<div class='{{rs.wilayah}}'>\
+				<div class='profilRS'>\
+				<p>{{rs.nama}}</p>\
+				<p>{{rs.alamat}}</p>\
+				<p>{{rs.telp}}</p>\
+				<p>{{rs.mail}}</p>\
+				</div>\
+				</div>\
+				{% endfor %}"
+			)
+
+			var selected = $(this).val();
+
+			$("#listRS>div").each(function(){
+				if ($(this).attr("class") == selected) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+			})
+			
+    	});
+	})
+</script>
+{% endblock %}

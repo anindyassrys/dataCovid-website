@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Indeks Kewaspadaan</title>
+{% endblock meta %}
+{% block content %}
+  <head>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">PBP09</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/data-covid">Data Covid-19</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vaksinasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/kewaspadaan">Peta Risiko</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rumah Sakit Rujukan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Diskusi</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/login">Login</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <title>Indeks Kewaspadaan</title>
+  </head>
+
+  <div style="margin-left: 25px">
+  <h1><b>Indeks Kewaspadaan Covid19</b></h1>
+  <h2>Apa yang ditunjukkan oleh indeks ini?</h2>
+  <h3>Indeks ini menunjukkan besarnya resiko Anda tertular Covid pada setiap wilayah di Indonesia<br>
+      Selalu Tingkatkan kewaspadaan dan Perketat protokol kesehatan, khususnya pada daerah-daerah rawan Covid19</h3>
+  </div>
+    <div style="text-align: center;">
+      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/DfOth/5/" 
+      scrolling="no" frameborder="1" style="width: 0; min-width: 96% !important; border: 3px solid black; padding:12.5px;" height="392" >
+      </iframe>
+      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
+      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
+      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+      </script>
+    </div>
+
+  <h2 style="margin-left: 25px">Peta indeks ini juga dapat disajikan dengan berbagai indikator berbeda:</h2>
+
+  <h2 style="margin-left: 25px"><b>Kasus Harian</b></h2>
+    <div style="text-align: center;">
+      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/gn31x/1/" 
+      scrolling="no" frameborder="1" style="width: 0; min-width: 96% !important; border: 3px solid black; padding:12.5px;" height="392" >
+      </iframe>
+      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
+      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
+      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+      </script>
+    </div>
+
+  <h2 style="margin-left: 25px"><b>Kasus Aktif</b></h2>
+    <div style="text-align: center;">
+      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/hMMxg/1/" 
+      scrolling="no" frameborder="1" style="width: 0; min-width: 96% !important; border: 3px solid black; padding:12.5px;" height="392" >
+      </iframe>
+      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
+      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
+      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+      </script>
+    </div>
+  
+  <h2 style="margin-left: 25px"><b>Case Fatality Rate (CFR)</b></h2>
+  <h4 style="margin-left: 25px">CFR menunjukkan tingkat kematian untuk kasus positif Covid19</h4>
+    <div style="text-align: center;">
+      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/3FH2E/1/" 
+      scrolling="no" frameborder="1" style="width: 0; min-width: 96% !important; border: 3px solid black; padding:12.5px;" height="392" >
+      </iframe>
+      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
+      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
+      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+      </script>
+    </div>
+  
+  <h2 style="margin-left: 25px"><b>Rasio Lacak Isolasi (RLI)</b></h2>
+  <h4 style="margin-left: 25px">RLI adalah perbandingan jumlah suspect dan kontak dengan jumlah kasus terkonfirmasi Covid19</h4>
+    <div style="text-align: center;">
+      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/b1RaZ/1/" 
+      scrolling="no" frameborder="1" style="width: 0; min-width: 96% !important; border: 3px solid black; padding:12.5px;" height="392" >
+      </iframe>
+      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
+      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
+      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+      </script>
+    </div>
+  
+  <h4 style="margin-left: 25px">Indeks di atas dibuat dengan faktor-faktor tambahan:</h4>
+  <h4 style="margin-left: 25px">*Peta indeks kewaspadaan di atas diambil dari <b>https://kawalcovid19.id/</b> dengan pengubahan seperlunya.</h4>
+  
+{% endblock %}
