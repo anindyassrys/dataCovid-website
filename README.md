@@ -1,4 +1,4 @@
-# PBP D Kelompok 7
+# PBP D Kelompok 9
 - Dixon Frederick - 2006597840
 - Anindya Sasriya Ibrahim - 2006597714
 - Paskalis Abhista Bagaskara Y - 2006597733
@@ -6,6 +6,11 @@
 - Muhammad Abdurahman Basyah - 2006597241
 - Muhammad Arkan Fauzan - 2006597380
 - Al Ghifari Enerza Sentanu - 2006596825
+
+## Pipeline Status
+[![pipeline](https://gitlab.com/muhammad.abdurahman/pbp-tk/badges/master/pipeline.svg)](http://covid-information-app.herokuapp.com/)
+
+Berikut adalah **[link website](http://covid-information-app.herokuapp.com/)** kelompok kami
 
 ## Cerita dan Persona Aplikasi
 Kami akan membuat suatu website yang berisi informasi yang valid seputar Covid-19, dengan tujuan untuk mengedukasi para pengguna dan pembaca. Kami akan menyampaikan hal-hal yang perlu dilakukan ataupun dihindari di masa pandemi, data kasus Covid-19, informasi vaksinasi, dan hal lainnya.
