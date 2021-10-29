@@ -81,8 +81,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates',
-            r'C:\Users\M. Margaretha Stella\Google Drive\Fasilkom\Semester 3\PBP\TK\pbp-tk\login\templates',
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
