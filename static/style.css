@@ -38,7 +38,7 @@ div.pullUp a:before
     content: '';
     background: rgb(172, 172, 172);
     opacity: 0.3;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 div.pullUp a:hover:before
