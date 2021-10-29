@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect 
-from django.http import HttpResponse
+from django.http import HttpResponse, response
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
+from diskusi.forms import DiscussionForm
+
 
 # Create your views here.
 from .models import *
@@ -54,3 +56,13 @@ def loginPage(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('login:login')
+
+@login_required(login_url='login')
+def createDiscussion(request):
+	context = {}
+	form = DiscussionForm(request.POST or None)
+	if(form.is_valid() and request.method == "POST"):
+		form.save()
+		return response.HttpResponseRedirect('/diskusi')
+	context['form'] = form
+	return render(request, "templates/diskusi/tambah_diskusi.html")
