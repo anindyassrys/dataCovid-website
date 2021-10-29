@@ -55,11 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
-    'rujukan',
     'kewaspadaan',
     'Home',
     'datacovid',
+    'login',
+    'rujukan',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +80,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'templates',
+            r'C:\Users\M. Margaretha Stella\Google Drive\Fasilkom\Semester 3\PBP\TK\pbp-tk\login\templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -151,6 +152,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
 # This is the directory for storing `collectstatic` results.
 # This shouldn't be included in your Git repository.
