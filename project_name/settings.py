@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'diskusi',
     'kewaspadaan',
-    'Home',
+    'home',
     'datacovid',
     'login',
     'rujukan',
