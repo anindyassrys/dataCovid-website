@@ -1,0 +1,16 @@
+.discussion.truncate {
+    /* text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    white-space: nowrap; */
+    font-size: 1em;
+    line-height: 1.5em;
+    max-height: 4.5em; /* Max 3 lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}

@@ -4,5 +4,5 @@ from django.db import models
 
 class Discussion(models.Model):
     title = models.CharField(max_length=50)
-    message = models.CharField(max_length=500)
+    message = models.CharField(max_length=2500)
     created = models.DateTimeField(auto_now_add=True)
