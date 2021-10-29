@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <nav class="navbar navbar-expand-lg" style="background-color: #cac3be;">
+  <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #cac3be;">
     <div class="container-fluid pullUp">
       <a class="navbar-brand" style="font-weight: bold;" href="/home">PBP09</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -55,7 +55,7 @@
             <a class="nav-link active" aria-current="page" style="color: #026670;" href="/login">Login</a>
           </li>
         </ul> -->
-        <span class="hello-msg">Hello, {{request.user}} </span>
+        <span class="hello-msg">Hello, {{request.user}}</span>
         <span ><a  class="hello-msg" href="/logout" style="color: #026670;">Logout</a></span>
         {% else %}
         <ul class="nav justify-content-end">
