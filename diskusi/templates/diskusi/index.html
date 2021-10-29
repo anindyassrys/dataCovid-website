@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/diskusi.css' %}">
+{% endblock css %}
+
+{% block title %}
+Forum Diskusi - Covid App
+{% endblock title %}
+
+{% block content %}
+<div class="diskusi-container">
+    <div class="title">
+        <h2>Forum Diskusi</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </div>
+    <button>Tambahkan Topik Diskusi</button>
+    {% for discussion in discussions %}
+    <tr>
+        <td>{{discussion.title}}</td>
+        <td>{{discussion.message}}</td>
+    </tr>
+    {% endfor %}
+</div>
+{% endblock content %}
