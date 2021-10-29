@@ -10,6 +10,7 @@ Forum Diskusi - Covid App
 {% endblock title %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="diskusi-container mx-auto" style="width: 90%;">
   <div class="title my-5 mx-auto" style="max-width: 600px;">
     <br><br>
@@ -32,5 +33,15 @@ Forum Diskusi - Covid App
     <p>{{discussion.message}}</p>
   </div>
   {% endfor %}
+  <!-- <span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="/logout" style="color: #026670;">Logout</a></span> -->
 </div>
+  {% else %}
+  <br><br><br><br>
+  <div style="text-align: center;">
+  <h2 style="font-weight: bold;">Forum Diskusi</h2>
+  <span class="hello-msg" style="font-size: x-large;">Halo, silakan <a href="/login">Login</a> untuk berdiskusi! 😊</span>
+</div>
+  {% endif %}
+
 {% endblock content %}
