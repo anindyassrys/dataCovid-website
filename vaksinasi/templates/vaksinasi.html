@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <head>
+        <title>Vaksinasi</title>
+    </head>
+    <div style="margin-left: 25px">
+        <br><br><br><br>
+    <h1><b>Apa itu vaksin?</b></h1>
+    <p>
+        Vaksin adalah sediaan biologis yang digunakan untuk menghasilkan kekebalan adaptif terhadap penyakit infeksi tertentu. <br>
+        Biasanya, vaksin mengandung agen atau zat yang menyerupai mikroorganisme penyebab penyakit dan sering kali dibuat dari <br> 
+        mikroorganisme yang dilemahkan atau dimatikan, dari toksinnya, atau dari salah satu protein permukaannya. Agen dalam vaksin <br>
+        merangsang sistem imun agar dapat mengenali agen tersebut sebagai ancaman, menghancurkannya, dan mengingatnya agar sistem imun <br>
+        dapat kembali mengenali dan menghancurkan mikroorganisme yang berhubungan dengan agen tersebut saat ditemui pada masa depan.
+    </p>
+    <h1><b>Mengapa perlu divaksin?</b></h1>
+    <p>
+        Mengingat akan penyakit Covid-19 yang sedang mewabah saat ini dan telah memakan banyak korban jiwa, vaksinasi mengambil <br> 
+        peran penting dalam pembentukan <i>herd immunity</i> di masyarakat. <i>Herd immunity</i> merupakan suatu kondisi ketika <br>
+        sebagian besar populasi kebal terhadap penyakit menular tertentu sehingga memberikan perlindungan tidak langsung kepada <br>
+        kelompok masyarakat yang tidak kebal terhadap penyakit menular tersebut. Hal ini dapat mengurangi tingkat penularan yang <br>
+        kemudian juga mengurangi angka kematian yang terjadi.
+    </p>
+    <h1><b>Progress vaksinasi per kategori</b></h1>
+    <form action="">
+        <label for="kategori">Pulih kategori :</label>
+        <select name="kategori" id="kategori">
+            <option value="semua-vaksinasi">Semua Vaksinasi</option>
+            <option value="tenaga-kesehatan">Tenaga Kesehatan</option>
+            <option value="petugas-publik">Petugas Publik</option>
+            <option value="lanjut-usia">Lanjut Usia</option>
+            <option value="masyarakat-rentan-dan-umum">Masyarakat Rentan dan Umum</option>
+            <option value="kelompok-usia-12-17-tahun">Kelompok Usia 12-17 tahun</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Pilih">
+    </form>
+{% endblock %}

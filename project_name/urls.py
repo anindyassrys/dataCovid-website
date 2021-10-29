@@ -26,6 +26,7 @@ urlpatterns = [
     path('home', include('Home.urls')),
     path('diskusi/', include(diskusi_urls)),
     path('data-covid', include('datacovid.urls')),
+    path('vaksinasi', include('vaksinasi.urls')),
     path('', include('login.urls', 'login')),
     re_path(r'^$', Home, name='home')
 ]
