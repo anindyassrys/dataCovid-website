@@ -10,7 +10,7 @@ class DiscussionForm(forms.ModelForm):
         fields = ["title", "message"]
 
     title = forms.CharField(widget=TextInput(
-        attrs={'placeholder': 'Nama Baru'}))
+        attrs={'placeholder': 'Judul Diskusi'}))
 
     message = forms.CharField(widget=TextInput(
-        attrs={'placeholder': 'ex: 2006597241'}))
+        attrs={'placeholder': 'Isi diskusi...'}))

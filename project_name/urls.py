@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from diskusi import urls as diskusi_urls
+import diskusi.urls as diskusi_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),

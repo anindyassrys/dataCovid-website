@@ -10,21 +10,26 @@ Forum Diskusi - Covid App
 {% endblock title %}
 
 {% block content %}
-<div class="diskusi-container">
-    <div class="title">
-        <h2>Forum Diskusi</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+<div class="diskusi-container mx-auto" style="width: 90%;">
+  <div class="title my-5 mx-auto" style="max-width: 600px;">
+    <h2 style="font-weight: 700;">Forum Diskusi</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <a href="tambah-diskusi">
+    <button type="button" class="btn btn-primary py-3 px-4" style="font-weight: 700;">Tambahkan Topik Diskusi</button>
+  </a>
+  {% for discussion in discussions %}
+  <div class="mt-4 p-4 border border-secondary border-1 rounded" style="background-color: #DFE6ED;">
+    <div>
+      {{discussion.created}}
     </div>
-    <button>Tambahkan Topik Diskusi</button>
-    {% for discussion in discussions %}
-    <tr>
-        <td>{{discussion.title}}</td>
-        <td>{{discussion.message}}</td>
-    </tr>
-    {% endfor %}
+    <h3 style="font-weight: 700;">{{discussion.title}}</h3>
+    <p>{{discussion.message}}</p>
+  </div>
+  {% endfor %}
 </div>
 {% endblock content %}

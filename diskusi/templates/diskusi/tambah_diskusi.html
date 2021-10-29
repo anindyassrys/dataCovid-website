@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/diskusi.css' %}">
+{% endblock css %}
+
+{% block title %}
+Forum Diskusi - Diskusi Baru
+{% endblock title %}
+<body class="bg-dark">
+    {% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center"
+            class="w-75 text-light">
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-info" value="Submit">
+        </div>
+    </form>
+    {% endblock content %}
+</body>
+
+</html>
