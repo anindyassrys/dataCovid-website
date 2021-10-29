@@ -7,8 +7,9 @@
 - Muhammad Arkan Fauzan - 2006597380
 - Al Ghifari Enerza Sentanu - 2006596825
 
-## Pipeline Status
-[![pipeline](https://gitlab.com/muhammad.abdurahman/pbp-tk/badges/master/pipeline.svg)](http://covid-information-app.herokuapp.com/)
+
+[![pipeline status](https://gitlab.com/muhammad.abdurahman/pbp-tk/badges/master/pipeline.svg)](https://gitlab.com/muhammad.abdurahman/pbp-tk/-/commits/master)
+[![coverage report](https://gitlab.com/muhammad.abdurahman/pbp-tk/badges/master/coverage.svg)](https://gitlab.com/muhammad.abdurahman/pbp-tk/-/commits/master)
 
 Berikut adalah **[link website](http://covid-information-app.herokuapp.com/)** kelompok kami
 
