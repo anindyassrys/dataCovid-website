@@ -9,13 +9,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- bootstraps js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'home.css' %}">
 {% endblock css %}
 {% block title %}
 Home
 {% endblock title %}
 {% block content %}
-    <br><br><br><br>
     <body>
         <br><br><br><br>  
         <h1>Selamat Datang!</h1>
@@ -52,9 +51,9 @@ Home
 
         <h1>FAQ</h1>
         <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button"  id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Apa itu Virus Korona?
               </button>
             </h2>
@@ -70,9 +69,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Apa bedanya dengan Covid-19?
               </button>
             </h2>
@@ -82,9 +81,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Bagaimana Covid-19 menular?
               </button>
             </h2>
@@ -94,9 +93,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+              <button class="accordion-button" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                 Jika seseorang terinfeksi virus ini, berapa lama sampai muncul gejala?
               </button>
             </h2>
@@ -106,9 +105,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 Seberapa banyak pasien yang akan mengalami gejala serius?
               </button>
             </h2>
@@ -118,9 +117,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingSix">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                 Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari kelompok usia?
               </button>
             </h2>
@@ -130,9 +129,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingSeven">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                 Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari jenis kelamin?
               </button>
             </h2>
@@ -142,10 +141,10 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingEight">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                Bagaimanakah tingkat kemtian akibat penyakit ini jika dilihat dari ada/tidak adanya penyakit penyerta/komorbiditas lainnya?
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari ada/tidak adanya penyakit penyerta/komorbiditas lainnya?
               </button>
             </h2>
             <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
@@ -154,9 +153,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingNine">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                 Apa yang harus saya sampaikan kepada tenaga medis jika saya batuk pilek demam dan sulit bernafas?
               </button>
             </h2>
@@ -166,9 +165,9 @@ Home
               </div>
             </div>
           </div>
-          <div class="accordion-item">
+          <div class="accordion-item" id="accback">
             <h2 class="accordion-header" id="headingTen">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                 Bagaimana saya dapat dinyatakan positif atau negatif Covid-19?
               </button>
             </h2>
