@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'datacovid',
     'login',
     'rujukan',
+    'vaksinasi',
 ]
 
 MIDDLEWARE = [
