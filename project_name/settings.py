@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'main',
     'diskusi',
     'kewaspadaan',
-    'Home',
+    'home',
     'datacovid',
     'login',
     'rujukan',
