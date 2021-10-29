@@ -5,4 +5,5 @@ app_name = 'datacovid'
 
 urlpatterns = [
     path('', views.datacovid, name='datacovid'),
+    path('formdata', views.formdata, name='formdata'),
 ]

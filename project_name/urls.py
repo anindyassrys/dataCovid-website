@@ -23,5 +23,5 @@ urlpatterns = [
     path('main', include('main.urls')),
     path('kewaspadaan', include('kewaspadaan.urls')),
     path('home', include('Home.urls')),
-    path('data-covid', include('datacovid.urls')),
+    path('data-covid/', include('datacovid.urls')),
 ]

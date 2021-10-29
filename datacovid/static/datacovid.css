@@ -1,0 +1,117 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  
+  position: absolute;
+  width: 360px;
+  height: 32px;
+  left: 537px;
+  top: 151px;     
+}
+
+#header-2{
+  position: absolute;
+  width: 1053px;
+  height: 32px;
+  left: 190px;
+  top: 183px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  
+  letter-spacing: 0.1px; 
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; 
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  #card-1 {
+    position: absolute;
+    width: 275px;
+    height: 295px;
+    left: 196px;
+    top: 302px;
+    border-radius: 30px;     
+  }
+
+  #card-2 {
+    position: absolute;
+    width: 275px;
+    height: 295px;
+    left: 585px;
+    top: 302px;
+    border-radius: 30px;  
+  }
+
+  #card-3 {
+    position: absolute;
+    width: 275px;
+    height: 295px;
+    left: 965px;
+    top: 302px;
+    border-radius: 30px;   
+  }
+
+  #card-4 {
+    position: absolute;
+    width: 748px;
+    height: 256px;
+    left: 348px;
+    top: 699px;
+    border-radius: 30px;   
+  }
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    position:absolute;
+    left: 575px;
+    top: 1123px;
+  }
+
+  table, th, td {
+    border: 2px solid #201e44;
+    padding: 8px;
+  }
+
+  table, tr:nth-child(even){background-color: #ffffff;}
+  table, tr:hover {background-color:#99b8fa;}
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #201e44;
+    color: #99b8fa;
+  }
+
+  table.center {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+  #ellips-1 {
+    position: absolute;
+    width: 803px;
+    height: 736px;
+    left: 807px;
+    top: 91px;
+  }
