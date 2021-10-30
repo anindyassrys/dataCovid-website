@@ -10,6 +10,69 @@
 {% block content %}
     <head>
         <title>Vaksinasi</title>
+        <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+        <script>
+            function getSelectedValue(){
+                var currentUrl = window.location.href;
+                console.log(currentUrl);
+                var selectedValue = document.getElementById("kategori").value;
+                if (selectedValue == "semua-vaksinasi") {
+                    $.ajax({
+                        url: currentUrl + "/kategori", 
+                        success: function(result){
+                            $(".nama-kategori").text(result.at(0).fields['nama_kategori']);
+                            $(".dosis-1").text(result.at(0).fields['telah_vaksin_dosis_1']);
+                            $(".dosis-2").text(result.at(0).fields['telah_vaksin_dosis_2']);
+                            $(".target-vaksin").text(result.at(0).fields['target_vaksin']);                          
+                    }});
+                }else if(selectedValue == "tenaga-kesehatan"){
+                    $.ajax({
+                        url: currentUrl + "/kategori", 
+                        success: function(result){
+                            $(".nama-kategori").text(result.at(1).fields['nama_kategori']);
+                            $(".dosis-1").text(result.at(1).fields['telah_vaksin_dosis_1']);
+                            $(".dosis-2").text(result.at(1).fields['telah_vaksin_dosis_2']);
+                            $(".target-vaksin").text(result.at(1).fields['target_vaksin']);                          
+                    }});
+                }else if(selectedValue == "petugas-publik"){
+                    $.ajax({
+                        url: currentUrl + "/kategori", 
+                        success: function(result){
+                            $(".nama-kategori").text(result.at(2).fields['nama_kategori']);
+                            $(".dosis-1").text(result.at(2).fields['telah_vaksin_dosis_1']);
+                            $(".dosis-2").text(result.at(2).fields['telah_vaksin_dosis_2']);
+                            $(".target-vaksin").text(result.at(2).fields['target_vaksin']);                          
+                    }});
+                }else if(selectedValue == "lanjut-usia"){
+                    $.ajax({
+                        url: currentUrl + "/kategori", 
+                        success: function(result){
+                            $(".nama-kategori").text(result.at(3).fields['nama_kategori']);
+                            $(".dosis-1").text(result.at(3).fields['telah_vaksin_dosis_1']);
+                            $(".dosis-2").text(result.at(3).fields['telah_vaksin_dosis_2']);
+                            $(".target-vaksin").text(result.at(3).fields['target_vaksin']);                          
+                    }});                    
+                }else if(selectedValue == "masyarakat-rentan-dan-umum"){
+                    $.ajax({
+                        url: currentUrl + "/kategori", 
+                        success: function(result){
+                            $(".nama-kategori").text(result.at(4).fields['nama_kategori']);
+                            $(".dosis-1").text(result.at(4).fields['telah_vaksin_dosis_1']);
+                            $(".dosis-2").text(result.at(4).fields['telah_vaksin_dosis_2']);
+                            $(".target-vaksin").text(result.at(4).fields['target_vaksin']);                          
+                    }});  
+                }else if(selectedValue == "kelompok-usia-12-17-tahun"){
+                    $.ajax({
+                        url: currentUrl + "/kategori", 
+                        success: function(result){
+                            $(".nama-kategori").text(result.at(5).fields['nama_kategori']);
+                            $(".dosis-1").text(result.at(5).fields['telah_vaksin_dosis_1']);
+                            $(".dosis-2").text(result.at(5).fields['telah_vaksin_dosis_2']);
+                            $(".target-vaksin").text(result.at(5).fields['target_vaksin']);                          
+                    }});                     
+                }
+            }
+        </script>
     </head>
     <div style="margin-left: 25px">
         <br><br><br><br>
@@ -31,8 +94,8 @@
     </p>
     <h1><b>Progress vaksinasi per kategori</b></h1>
     <form action="">
-        <label for="kategori">Pulih kategori :</label>
-        <select name="kategori" id="kategori">
+        <label for="kategori">Pilih kategori :</label>
+        <select name="kategori" id="kategori" onchange="getSelectedValue()">
             <option value="semua-vaksinasi">Semua Vaksinasi</option>
             <option value="tenaga-kesehatan">Tenaga Kesehatan</option>
             <option value="petugas-publik">Petugas Publik</option>
@@ -41,6 +104,15 @@
             <option value="kelompok-usia-12-17-tahun">Kelompok Usia 12-17 tahun</option>
         </select>
         <br><br>
-        <input type="submit" value="Pilih">
     </form>
+    <div id="card-1">
+        <h2 class ="nama-kategori"></h2>
+        <p class="dosis-1"></p>
+        <p class="target-vaksin"></p>
+    </div>
+    <div id="card-2">
+        <h2 class ="nama-kategori"></h2>
+        <p class="dosis-2"></p>
+        <p class="target-vaksin"></p>
+    </div>
 {% endblock %}
