@@ -10,67 +10,110 @@
 {% block content %}
     <head>
         <title>Vaksinasi</title>
+        <link rel="stylesheet" href="{% static 'vaksinasi-style.css' %}">
         <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
         <script>
+            $(document).ready(function(){
+                getSelectedValue();
+            });
             function getSelectedValue(){
                 var currentUrl = window.location.href;
                 console.log(currentUrl);
                 var selectedValue = document.getElementById("kategori").value;
                 if (selectedValue == "semua-vaksinasi") {
                     $.ajax({
-                        url: currentUrl + "/kategori", 
+                        url: currentUrl + "kategori", 
                         success: function(result){
                             $(".nama-kategori").text(result.at(0).fields['nama_kategori']);
-                            $(".dosis-1").text(result.at(0).fields['telah_vaksin_dosis_1']);
-                            $(".dosis-2").text(result.at(0).fields['telah_vaksin_dosis_2']);
-                            $(".target-vaksin").text(result.at(0).fields['target_vaksin']);                          
+                            $(".dosis-1").text(numberWithSpaces(result.at(0).fields['telah_vaksin_dosis_1']));
+                            $(".dosis-2").text(numberWithSpaces(result.at(0).fields['telah_vaksin_dosis_2']));
+                            $(".target-vaksin-1").text(((result.at(0).fields['telah_vaksin_dosis_1'] / result.at(0).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(0).fields['target_vaksin']) + " telah divaksin");
+                            $(".target-vaksin-2").text(((result.at(0).fields['telah_vaksin_dosis_2'] / result.at(0).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(0).fields['target_vaksin']) + " telah divaksin");
+                            $(".per-tanggal").text("Pembaruan terakhir :   " + result.at(0).fields['per_tanggal']);
+                            $(".persentase-1").text(((result.at(0).fields['telah_vaksin_dosis_1'] / result.at(0).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-1").css("width", ((result.at(0).fields['telah_vaksin_dosis_1'] / result.at(0).fields['target_vaksin']) * 100).toFixed(2) + "%");
+                            $(".persentase-2").text(((result.at(0).fields['telah_vaksin_dosis_2'] / result.at(0).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-2").css("width", ((result.at(0).fields['telah_vaksin_dosis_2'] / result.at(0).fields['target_vaksin']) * 100).toFixed(2) + "%");
                     }});
                 }else if(selectedValue == "tenaga-kesehatan"){
                     $.ajax({
-                        url: currentUrl + "/kategori", 
+                        url: currentUrl + "kategori", 
                         success: function(result){
                             $(".nama-kategori").text(result.at(1).fields['nama_kategori']);
-                            $(".dosis-1").text(result.at(1).fields['telah_vaksin_dosis_1']);
-                            $(".dosis-2").text(result.at(1).fields['telah_vaksin_dosis_2']);
-                            $(".target-vaksin").text(result.at(1).fields['target_vaksin']);                          
+                            $(".dosis-1").text(numberWithSpaces(result.at(1).fields['telah_vaksin_dosis_1']));
+                            $(".dosis-2").text(numberWithSpaces(result.at(1).fields['telah_vaksin_dosis_2']));
+                            $(".target-vaksin-1").text(((result.at(1).fields['telah_vaksin_dosis_1'] / result.at(1).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(1).fields['target_vaksin']) + " telah divaksin");
+                            $(".target-vaksin-2").text(((result.at(1).fields['telah_vaksin_dosis_2'] / result.at(1).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(1).fields['target_vaksin']) + " telah divaksin");
+                            $(".per-tanggal").text("Pembaruan terakhir :   " + result.at(1).fields['per_tanggal']);
+                            $(".persentase-1").text(((result.at(1).fields['telah_vaksin_dosis_1'] / result.at(1).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-1").css("width", ((result.at(1).fields['telah_vaksin_dosis_1'] / result.at(1).fields['target_vaksin']) * 100).toFixed(2) + "%");
+                            $(".persentase-2").text(((result.at(1).fields['telah_vaksin_dosis_2'] / result.at(1).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-2").css("width", ((result.at(1).fields['telah_vaksin_dosis_2'] / result.at(1).fields['target_vaksin']) * 100).toFixed(2) + "%");
                     }});
                 }else if(selectedValue == "petugas-publik"){
                     $.ajax({
-                        url: currentUrl + "/kategori", 
+                        url: currentUrl + "kategori", 
                         success: function(result){
                             $(".nama-kategori").text(result.at(2).fields['nama_kategori']);
-                            $(".dosis-1").text(result.at(2).fields['telah_vaksin_dosis_1']);
-                            $(".dosis-2").text(result.at(2).fields['telah_vaksin_dosis_2']);
-                            $(".target-vaksin").text(result.at(2).fields['target_vaksin']);                          
+                            $(".dosis-1").text(numberWithSpaces(result.at(2).fields['telah_vaksin_dosis_1']));
+                            $(".dosis-2").text(numberWithSpaces(result.at(2).fields['telah_vaksin_dosis_2']));
+                            $(".target-vaksin-1").text(((result.at(2).fields['telah_vaksin_dosis_1'] / result.at(2).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(2).fields['target_vaksin']) + " telah divaksin");
+                            $(".target-vaksin-2").text(((result.at(2).fields['telah_vaksin_dosis_2'] / result.at(2).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(2).fields['target_vaksin']) + " telah divaksin");
+                            $(".per-tanggal").text("Pembaruan terakhir :   " + result.at(2).fields['per_tanggal']);
+                            $(".persentase-1").text(((result.at(2).fields['telah_vaksin_dosis_1'] / result.at(2).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-1").css("width", ((result.at(2).fields['telah_vaksin_dosis_1'] / result.at(2).fields['target_vaksin']) * 100).toFixed(2) + "%");
+                            $(".persentase-2").text(((result.at(2).fields['telah_vaksin_dosis_2'] / result.at(2).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-2").css("width", ((result.at(2).fields['telah_vaksin_dosis_2'] / result.at(2).fields['target_vaksin']) * 100).toFixed(2) + "%"); 
                     }});
                 }else if(selectedValue == "lanjut-usia"){
                     $.ajax({
-                        url: currentUrl + "/kategori", 
+                        url: currentUrl + "kategori", 
                         success: function(result){
                             $(".nama-kategori").text(result.at(3).fields['nama_kategori']);
-                            $(".dosis-1").text(result.at(3).fields['telah_vaksin_dosis_1']);
-                            $(".dosis-2").text(result.at(3).fields['telah_vaksin_dosis_2']);
-                            $(".target-vaksin").text(result.at(3).fields['target_vaksin']);                          
+                            $(".dosis-1").text(numberWithSpaces(result.at(3).fields['telah_vaksin_dosis_1']));
+                            $(".dosis-2").text(numberWithSpaces(result.at(3).fields['telah_vaksin_dosis_2']));
+                            $(".target-vaksin-1").text(((result.at(3).fields['telah_vaksin_dosis_1'] / result.at(3).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(3).fields['target_vaksin']) + " telah divaksin");
+                            $(".target-vaksin-2").text(((result.at(3).fields['telah_vaksin_dosis_2'] / result.at(3).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(3).fields['target_vaksin']) + " telah divaksin");
+                            $(".per-tanggal").text("Pembaruan terakhir :   " + result.at(3).fields['per_tanggal']);
+                            $(".persentase-1").text(((result.at(3).fields['telah_vaksin_dosis_1'] / result.at(3).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-1").css("width", ((result.at(3).fields['telah_vaksin_dosis_1'] / result.at(3).fields['target_vaksin']) * 100).toFixed(2) + "%");     
+                            $(".persentase-2").text(((result.at(3).fields['telah_vaksin_dosis_2'] / result.at(3).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-2").css("width", ((result.at(3).fields['telah_vaksin_dosis_2'] / result.at(3).fields['target_vaksin']) * 100).toFixed(2) + "%");        
                     }});                    
                 }else if(selectedValue == "masyarakat-rentan-dan-umum"){
                     $.ajax({
-                        url: currentUrl + "/kategori", 
+                        url: currentUrl + "kategori", 
                         success: function(result){
                             $(".nama-kategori").text(result.at(4).fields['nama_kategori']);
-                            $(".dosis-1").text(result.at(4).fields['telah_vaksin_dosis_1']);
-                            $(".dosis-2").text(result.at(4).fields['telah_vaksin_dosis_2']);
-                            $(".target-vaksin").text(result.at(4).fields['target_vaksin']);                          
+                            $(".dosis-1").text(numberWithSpaces(result.at(4).fields['telah_vaksin_dosis_1']));
+                            $(".dosis-2").text(numberWithSpaces(result.at(4).fields['telah_vaksin_dosis_2']));
+                            $(".target-vaksin-1").text(((result.at(4).fields['telah_vaksin_dosis_1'] / result.at(4).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(4).fields['target_vaksin']) + " telah divaksin");
+                            $(".target-vaksin-2").text(((result.at(4).fields['telah_vaksin_dosis_2'] / result.at(4).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(4).fields['target_vaksin']) + " telah divaksin");
+                            $(".per-tanggal").text("Pembaruan terakhir :   " + result.at(4).fields['per_tanggal']);
+                            $(".persentase-1").text(((result.at(4).fields['telah_vaksin_dosis_1'] / result.at(4).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-1").css("width", ((result.at(4).fields['telah_vaksin_dosis_1'] / result.at(4).fields['target_vaksin']) * 100).toFixed(2) + "%"); 
+                            $(".persentase-2").text(((result.at(4).fields['telah_vaksin_dosis_2'] / result.at(4).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-2").css("width", ((result.at(4).fields['telah_vaksin_dosis_2'] / result.at(4).fields['target_vaksin']) * 100).toFixed(2) + "%"); 
                     }});  
                 }else if(selectedValue == "kelompok-usia-12-17-tahun"){
                     $.ajax({
-                        url: currentUrl + "/kategori", 
+                        url: currentUrl + "kategori", 
                         success: function(result){
                             $(".nama-kategori").text(result.at(5).fields['nama_kategori']);
-                            $(".dosis-1").text(result.at(5).fields['telah_vaksin_dosis_1']);
-                            $(".dosis-2").text(result.at(5).fields['telah_vaksin_dosis_2']);
-                            $(".target-vaksin").text(result.at(5).fields['target_vaksin']);                          
+                            $(".dosis-1").text(numberWithSpaces(result.at(5).fields['telah_vaksin_dosis_1']));
+                            $(".dosis-2").text(numberWithSpaces(result.at(5).fields['telah_vaksin_dosis_2']));
+                            $(".target-vaksin-1").text(((result.at(5).fields['telah_vaksin_dosis_1'] / result.at(5).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(5).fields['target_vaksin']) + " telah divaksin");
+                            $(".target-vaksin-2").text(((result.at(5).fields['telah_vaksin_dosis_2'] / result.at(5).fields['target_vaksin']) * 100).toFixed(2) + " % dari " + numberWithSpaces(result.at(5).fields['target_vaksin']) + " telah divaksin");
+                            $(".per-tanggal").text("Pembaruan terakhir :   " + result.at(5).fields['per_tanggal']);
+                            $(".persentase-1").text(((result.at(5).fields['telah_vaksin_dosis_1'] / result.at(5).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-1").css("width", ((result.at(5).fields['telah_vaksin_dosis_1'] / result.at(5).fields['target_vaksin']) * 100).toFixed(2) + "%"); 
+                            $(".persentase-2").text(((result.at(5).fields['telah_vaksin_dosis_2'] / result.at(5).fields['target_vaksin']) * 100).toFixed(2) + " %");
+                            $(".progress-bar-value-2").css("width", ((result.at(5).fields['telah_vaksin_dosis_2'] / result.at(5).fields['target_vaksin']) * 100).toFixed(2) + "%");
                     }});                     
                 }
+            }
+            function numberWithSpaces(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             }
         </script>
     </head>
@@ -105,14 +148,38 @@
         </select>
         <br><br>
     </form>
-    <div id="card-1">
-        <h2 class ="nama-kategori"></h2>
-        <p class="dosis-1"></p>
-        <p class="target-vaksin"></p>
-    </div>
-    <div id="card-2">
-        <h2 class ="nama-kategori"></h2>
-        <p class="dosis-2"></p>
-        <p class="target-vaksin"></p>
+    <div id="main-card">
+        <h2 id="card-title">Vaksinasi Dosis 1</h2>
+        <h2 id="card-title">Vaksinasi Dosis 2</h2>
+        <div id="card-1">
+            <h2 class ="nama-kategori"></h2>
+            <p class="dosis-1"></p>
+            <p class="desc">dosis pertama telah diberikan</p>
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-bar-value-1"></div>
+                </div>
+                <div class="progress-persentase">
+                    <span class="persentase-1"></span>
+                </div>
+            </div>
+            <p class="target-vaksin-1"></p>
+            <p class="per-tanggal"></p>
+        </div>
+        <div id="card-2">
+            <h2 class ="nama-kategori"></h2>
+            <p class="dosis-2"></p>
+            <p class="desc">dosis kedua telah diberikan</p>
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-bar-value-2"></div>
+                </div>
+                <div class="progress-persentase">
+                    <span class="persentase-2"></span>
+                </div>
+            </div>
+            <p class="target-vaksin-2"></p>
+            <p class="per-tanggal"></p>
+        </div>
     </div>
 {% endblock %}
