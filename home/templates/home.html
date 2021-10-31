@@ -18,165 +18,233 @@ Home
     <body>
         <br><br><br>
         <h1>Selamat Datang!</h1>
-        <p>Situs ini memuat info seputar penyakit Covid-19 di Indonesia, mulai dari data penyakit Covid-19 terkini, info vaksinasi, rujukan rumah sakit, hingga forum untuk berdiskusi seputar penyakit Covid-19.</p>
+        <p>Situs ini memuat info seputar penyakit COVID-19 di Indonesia, mulai dari data penyakit COVID-19 terkini, info vaksinasi, rujukan rumah sakit, hingga forum untuk berdiskusi seputar penyakit COVID-19.</p>
 
-        <h1>Apa Itu Covid-19?</h1>
-        <p>Covid-19 adalah penyakit yang disebabkan oleh virus corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). Covid-19 dapat menyebabkan gangguan sistem pernapasan, mulai dari gejala yang ringan seperti flu, hingga infeksi paru-paru, seperti pneumonia.</p>
-
-        <h1>Cara Penanganan Covid-19</h1>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
+        <div class="container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="row flex-row-reverse">
+                <div class="col-md-6">
+                  
+                </div>
+                <div class="col-md-6">
+                  <h1>Apa Itu COVID-19?</h1>
+                  <p>COVID-19 adalah penyakit yang disebabkan oleh virus corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). COVID-19 dapat menyebabkan gangguan sistem pernapasan, mulai dari gejala yang ringan seperti flu, hingga infeksi paru-paru, seperti pneumonia.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-
-        <h1>Kasus Positif Covid-19 Hari Ini</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos commodi accusantium, explicabo, facere incidunt, sequi sint sit similique laboriosam fugit ex debitis illo numquam ad adipisci eos laborum beatae?</p>
+        
+        <div class="container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="row flex-row-reverse">
+                <div class="col-md-6">
+                  <h1>Kasus Positif Covid-19 Hari Ini</h1>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos commodi accusantium, explicabo, facere incidunt, sequi sint sit similique laboriosam fugit ex debitis illo numquam ad adipisci eos laborum beatae?</p>
+                </div>
+                <div class="col-md-6">
+                  <h1>Cara Penanganan COVID-19</h1>
+                  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="{%static 'health operator.png' %}" class="img-fluid" alt="Responsive image">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 id="gambar_warna">Hubungi penyedia layanan kesehatan atau hotline COVID-19</h5>
+                          <p id="gambar_warna">Hubungi layanan kesehatan COVID-19 untuk mendapatkan perawatan medis</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{%static 'stay at home.png' %}" class="img-fluid" alt="Responsive image">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 id="gambar_warna">Tetap Dirumah</h5>
+                          <p id="gambar_warna">Jika merasa tidak sehat dan memiliki gejala dari penyakit
+                            COVID-19, maka Hindari keluar rumah dan melakukan isolasi mandiri. Hindari 
+                            berkunjung ketempat umum dan berkerumunnya orang-orang. Melakukan isolasi
+                            mandiri selama 14 hari dengan memperhatikan dan mengamati gejala-gejala yang
+                            terjadi pada tubuh.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{%static 'olahraga, cuci tangan, pakai masker.png' %}" class="img-fluid" alt="Responsive image">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 id="gambar_warna">Kenakan Masker, Cuci Tangan, dan Olahraga</h5>
+                          <p id="gambar_warna">Selalu mengenakan masker untuk 
+                            meminimalisir terjadinya penularan kepada orang lain. Dengan masker, menghin-
+                            dari juga dari saat bersin dan batuk. Selalu mencuci tangan juga untuk menja-
+                            ga kesterilan tangan. Serta rajin berolahraga untuk menjaga metabolisme tu-
+                            buh.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{%static 'Keep a Distance.png' %}" class="img-fluid" alt="Responsive image">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 id="gambar_warna">Menjaga Jarak</h5>
+                          <p id="gambar_warna">Selalu menjaga jarak baik dengan orang sekitar maupun juga
+                            keluarga. Kemudian, selalu membersihkan rumah dengan menyemprotkan disinfektan
+                            untuk selalu menjaga kesterilan rumah. pisahkan benda-benda yang digunakan 
+                            masing-masing.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{%static 'hubungi rumah sakit.png' %}" class="img-fluid" alt="Responsive image">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 id="gambar_warna">Jika semakin parah, hubungi penyedia layanan rumah sakit</h5>
+                          <p id="gambar_warna">Jika gejala-gejala
+                            yang timbul semakin parah, segera hubungi penyedia layanan rumah sakit untuk
+                            mendapatkan perawatan medis yang lebih intens.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <h1>FAQ</h1>
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button"  id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Apa itu Virus Korona?
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                Virus korona adalah sebutan untuk jenis virus yang dapat menyebabkan penyakit pada hewan dan manusia. Disebut korona karena bentuknya yang seperti mahkota (korona ~ crown = mahkota dalam bahasa Latin). 
-
-                Beberapa contoh penyakit pada manusia yang disebabkan oleh virus korona antara lain MERS (Sindrom Pernafasan Timur Tengah) dan SARS (Sindrom Pernafasan Akut Parah). 
-
-                Virus korona terbaru yang ditemukan yang ditemukan di Wuhan, Tiongkok, pada bulan Desember 2019 diberi nama SARS Coronavirus 2 (SARS-CoV-2) dan menyebabkan penyakit Coronavirus Disease 2019 (COVID-19).
-
-                Sumber: https://www.who.int/news-room/q-a-detail/q-a-coronaviruses
+        <div class="container-sm">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button"  id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Apa itu Virus Korona?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Virus korona adalah sebutan untuk jenis virus yang dapat menyebabkan penyakit pada hewan dan manusia. Disebut korona karena bentuknya yang seperti mahkota (korona ~ crown = mahkota dalam bahasa Latin). 
+  
+                  Beberapa contoh penyakit pada manusia yang disebabkan oleh virus korona antara lain MERS (Sindrom Pernafasan Timur Tengah) dan SARS (Sindrom Pernafasan Akut Parah). 
+  
+                  Virus korona terbaru yang ditemukan yang ditemukan di Wuhan, Tiongkok, pada bulan Desember 2019 diberi nama SARS Coronavirus 2 (SARS-CoV-2) dan menyebabkan penyakit Coronavirus Disease 2019 (COVID-19).
+  
+                  <p>Sumber: https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Apa bedanya dengan Covid-19?
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Apa bedanya dengan Covid-19?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Bagaimana Covid-19 menular?
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Bagaimana Covid-19 menular?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                Jika seseorang terinfeksi virus ini, berapa lama sampai muncul gejala?
-              </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the fourth item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                  Jika seseorang terinfeksi virus ini, berapa lama sampai muncul gejala?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the fourth item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingFive">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Seberapa banyak pasien yang akan mengalami gejala serius?
-              </button>
-            </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the fifth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Seberapa banyak pasien yang akan mengalami gejala serius?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the fifth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingSix">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari kelompok usia?
-              </button>
-            </h2>
-            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the sixth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari kelompok usia?
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the sixth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingSeven">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari jenis kelamin?
-              </button>
-            </h2>
-            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the seventh item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari jenis kelamin?
+                </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the seventh item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingEight">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari ada/tidak adanya penyakit penyerta/komorbiditas lainnya?
-              </button>
-            </h2>
-            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the eighth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  Bagaimanakah tingkat kematian akibat penyakit ini jika dilihat dari ada/tidak adanya penyakit penyerta/komorbiditas lainnya?
+                </button>
+              </h2>
+              <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the eighth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingNine">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                Apa yang harus saya sampaikan kepada tenaga medis jika saya batuk pilek demam dan sulit bernafas?
-              </button>
-            </h2>
-            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the ninth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  Apa yang harus saya sampaikan kepada tenaga medis jika saya batuk pilek demam dan sulit bernafas?
+                </button>
+              </h2>
+              <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the ninth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item" id="accback">
-            <h2 class="accordion-header" id="headingTen">
-              <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                Bagaimana saya dapat dinyatakan positif atau negatif Covid-19?
-              </button>
-            </h2>
-            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the tenth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item" id="accback">
+              <h2 class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" id="accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                  Bagaimana saya dapat dinyatakan positif atau negatif Covid-19?
+                </button>
+              </h2>
+              <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the tenth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
               </div>
             </div>
           </div>
         </div>
+        
+
+        
 {% endblock %}
 
