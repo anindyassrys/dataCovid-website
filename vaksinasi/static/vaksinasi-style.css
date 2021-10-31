@@ -1,0 +1,72 @@
+#main-card{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    width: 75rem;
+}
+
+#card-1, #card-2{
+    color: white;
+    padding: 32px;
+    background-color: rgb(46, 52, 59);
+    border-radius: 6px;
+    text-align: center;
+}
+
+#card-title{
+    text-align: center;
+}
+
+.dosis-1, .dosis-2{
+    font-size: 70px;
+    line-height: 84px;
+    color: rgb(51, 137, 254);
+    margin-bottom: 0px;
+}
+
+.desc{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.747);
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.per-tanggal{
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.target-vaksin-1, .target-vaksin-2{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.progress {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 25px;
+}
+
+.progress-bar{
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display: flex;
+    flex: 1 1 0%;
+    background-color: rgba(148, 148, 148, 0.171);
+    border-radius: 6px;
+}
+
+.progress-bar-value-1, .progress-bar-value-2{
+    background-color: rgb(2, 136, 9);
+    height: 25px;
+    width: 0%;
+    border-radius: 6px;    
+}
+
+.persentase-1, .persentase-2{
+    font-size: 17px;
+}
