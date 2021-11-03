@@ -8,79 +8,125 @@
 {% endblock css %}
 {% block meta %}
 <head>
-<title>Rumah Sakit Rujukan</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
 
 	#content {
-		max-width: 80%;
-		margin-left: auto;
-		margin-right: auto;
+		width: 80%;
+		margin: auto;
+		margin-top: 8rem;
+	}
+
+	#listRS {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	#listRS>div {
 		border-style: solid;
-		border-color: black;
-		background-color: lightgray;
-		margin: 8px;
+		border-color: #d0c4bc;
+		background-color: rgba(255, 255, 255, 0.7);
+		border-radius: 5px;
+		padding: 4px;
+		margin: 4px;
+		width: 45%;
 	}
 
-	#listRS>div>div {
-	padding: 8px;
+	#list {
+		margin-top: 2rem;
+	}
+
+	.profilRS {
+		padding: 8px;
+	}
+
+	.profilRS>p {
+		margin-bottom: 0%;
+		font-size: 1rem;
+	}
+
+	h1, h3, h6 {
+		color: #5b5856;
+	}
+
+	ion-icon {
+		margin-right: 4px;
+		position: relative;
+		top: 2px;
+		color: #5b5856
+;
 	}
 
 	
 </style>
 {% endblock %}
+{% block title %}
+Rumah Sakit Rujukan
+{% endblock %}
 
 {% block content %}
 <div id="content">
-<br><br><br>
-<h1>Rumah Sakit Rujukan</h1>
+	<h1>Rumah Sakit Rujukan</h1>
+	<br>
+	<label>Wilayah:</label>
+		
+	<select id="wilayah">
+		<option value="" selected>-- Silakan pilih --</option>
+		{% for wilayah in dwilayah %}
+			<option value="{{ wilayah.wid }}">{{ wilayah.nama }}</option>
+		{% endfor %}
+	</select>
 
-<label>Wilayah:</label>
-	
-<select id="wilayah">
-	<option value="" selected>-- Silakan pilih --</option>
-	{% for wilayah in dwilayah %}
-		<option value="{{ wilayah.wid }}">{{ wilayah.nama }}</option>
-	{% endfor %}
-</select>
-<div id="listRS"></div>
+	<div id="list">
+		<div id="emptylist">
+			<h3>Silakan pilih wilayah</h3>
+		</div>
+
+		<div id="listRS"></div>
+	</div>
 </div>
-
+<span></span>
 <script>
 
 	$(document).ready(function(){
+		$("#listRS").html(
+			"{% for rs in drs %}\
+			<div class='{{rs.wilayah}}'>\
+			<div class='profilRS'>\
+			<h6><b>{{rs.nama}}</b></h6>\
+			<p><span><ion-icon name='location'></ion-icon></span>{{rs.alamat}}</p>\
+			<p><span><ion-icon name='call'></ion-icon></span>{{rs.telp}}</p>\
+			<p><span><ion-icon name='mail'></ion-icon></span>{{rs.mail}}</p>\
+			</div>\
+			</div>\
+			{% endfor %}"
+		)
 		$("#listRS>div").hide();
-
 		$("select").change(function () {
-
-			$("#listRS").html(
-				"{% for rs in drs %}\
-				<div class='{{rs.wilayah}}'>\
-				<div class='profilRS'>\
-				<p>{{rs.nama}}</p>\
-				<p>{{rs.alamat}}</p>\
-				<p>{{rs.telp}}</p>\
-				<p>{{rs.mail}}</p>\
-				</div>\
-				</div>\
-				{% endfor %}"
-			)
 
 			var selected = $(this).val();
 
 			$("#listRS>div").each(function(){
-				if ($(this).attr("class") == selected) {
-					$(this).show();
-				} else {
+				if (selected == "") {
 					$(this).hide();
+					$("#emptylist").show();
+
+				} else {
+					$("#emptylist").hide();
+
+					if ($(this).attr("class") == selected) {
+					$(this).show();
+
+					} else {
+					$(this).hide();
+					}
 				}
 			})
-			
     	});
 	})
 </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 {% endblock %}
