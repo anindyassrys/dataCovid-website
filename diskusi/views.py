@@ -19,8 +19,9 @@ def add_diskusi(request):
 
     if form.is_valid() and request.method == "POST":
         tempForm = form.save(commit=False)
-
-        tempForm.user = request.user
+        is_anonymous = request.POST.get("is_anonymous", False)
+        if not is_anonymous:
+            tempForm.user = request.user
         tempForm.save()
         return HttpResponseRedirect("/diskusi")
 

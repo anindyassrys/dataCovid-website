@@ -15,3 +15,5 @@ class DiscussionForm(forms.ModelForm):
 
     message = forms.CharField(label="Pesan", widget=Textarea(
         attrs={'placeholder': 'Tuliskan pesanmu'}))
+
+    is_anonymous = forms.BooleanField(required=False, label="Sembunyikan username")

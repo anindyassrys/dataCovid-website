@@ -9,17 +9,16 @@ Forum Diskusi - Covid App
     {% block content %}
     <form action="" method="POST">
         {% csrf_token %}
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center"
-            class="w-50">
+        <div style="width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center">
             <div class="fw-bold lh-1.5">Topik Diskusi Baru</div>
             <div class="fw-bold lh-1.5 fs-1">Covid-19</div>
             {% for field in form %}
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 20px; align-self: flex-start;">
                 <div>{{field.label_tag}}</div>
                 <div>{{ field }}</div>
             </div>
             {% endfor %}
-            <div class="d-flex justify-content-between w-75" style="margin-top: 32px;">
+            <div class="d-flex justify-content-between w-100" style="margin-top: 32px;">
                 <button class="btn btn-secondary" onClick="javascript:history.go(-1);">Kembali</button>
                 <input type="submit" class="btn btn-primary" value="Submit">
             </div>
