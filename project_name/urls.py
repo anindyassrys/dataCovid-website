@@ -23,10 +23,6 @@ urlpatterns = [
     path('main', include('main.urls')),
     path('kewaspadaan', include('kewaspadaan.urls')),
     path('home', include('Home.urls')),
-<<<<<<< HEAD
     path('data-covid/', include('datacovid.urls')),
-=======
-    path('data-covid', include('datacovid.urls')),
     path('', include('login.urls', 'login'))
->>>>>>> 643e492340770d1cd45fa31357096bf93231087d
 ]
