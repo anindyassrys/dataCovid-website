@@ -1,5 +1,5 @@
 from django import forms
-from django.forms.widgets import TextInput
+from django.forms.widgets import TextInput, Textarea
 
 from diskusi.models import Discussion
 
@@ -10,8 +10,8 @@ class DiscussionForm(forms.ModelForm):
         fields = ["title", "message"]
         exclude = ("user",)
 
-    title = forms.CharField(widget=TextInput(
-        attrs={'placeholder': 'Judul Diskusi'}))
+    title = forms.CharField(label="Judul", widget=TextInput(
+        attrs={'placeholder': 'Topik diskusi'}))
 
-    message = forms.CharField(widget=TextInput(
-        attrs={'placeholder': 'Isi diskusi...'}))
+    message = forms.CharField(label="Pesan", widget=Textarea(
+        attrs={'placeholder': 'Tuliskan pesanmu'}))
