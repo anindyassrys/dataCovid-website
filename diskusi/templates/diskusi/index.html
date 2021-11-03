@@ -31,10 +31,11 @@ Forum Diskusi - Covid App
     </a>
     {% for discussion in discussions %}
     <div class="mt-4 p-4 border border-secondary border-1 rounded" style="background-color: #DFE6ED;">
-      <div>
-        {{discussion.created}}
-      </div>
+
       <h3 style="font-weight: 700;">{{discussion.title}}</h3>
+      <div style="color: gray; font-size: 0.75rem;">
+        {{discussion.created}} oleh {{discussion.user}}
+      </div>
 
       {% if discussion.message|length > 360 %}
       <p class="discussion truncate">{{discussion.message}}</p>

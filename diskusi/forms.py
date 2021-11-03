@@ -8,6 +8,7 @@ class DiscussionForm(forms.ModelForm):
     class Meta:
         model = Discussion
         fields = ["title", "message"]
+        exclude = ("user",)
 
     title = forms.CharField(widget=TextInput(
         attrs={'placeholder': 'Judul Diskusi'}))

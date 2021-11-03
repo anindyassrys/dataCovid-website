@@ -18,7 +18,10 @@ def add_diskusi(request):
     form = DiscussionForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
-        form.save()
+        tempForm = form.save(commit=False)
+
+        tempForm.user = request.user
+        tempForm.save()
         return HttpResponseRedirect("/diskusi")
 
     context['form'] = form
