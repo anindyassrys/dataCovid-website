@@ -79,10 +79,10 @@ Registration
 
 				<br>
 				<!-- {{form.errors}} -->
-				<div id="username-n">
+				<!-- <div id="username-n">
 					<p id="username-n-p"></p>
-				  </div>
-				  {% if form.errors|length < 7 %} {{ form.errors }} {% endif %}
+				  </div> -->
+				  {% if form.errors|length < 6 %} {{ form.errors }} {% endif %}
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Already have an account? <a href="{% url 'login:login' %}" class="ml-2">Login</a>
