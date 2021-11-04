@@ -2,6 +2,7 @@ html, body
 {
     margin: 0px;
     font-family: 'Sora', sans-serif;
+    background-color: #edeae5 !important;
 }
 
 .navbar-brand
@@ -36,12 +37,19 @@ div.pullUp a:before
     left: 0px;
     bottom: 0px;
     content: '';
-    background: rgb(172, 172, 172);
-    opacity: 0.3;
-    transition: all 0.3s;
+    background: #edeae5;
+    opacity: 0.2;
+    transition: all 0.5s;
 }
 
 div.pullUp a:hover:before
 {
     height: 100%;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }

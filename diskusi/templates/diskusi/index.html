@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'diskusi/style.css' %}">
+<!-- bootstraps css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/diskusi.css' %}">
+{% endblock css %}
+
+{% block title %}
+Forum Diskusi - Covid App
+{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="diskusi-container mx-auto" style="width: 90%;">
+  <div class="title my-5 mx-auto" style="max-width: 600px;">
+    <br><br>
+    <h2 style="font-weight: 700;">Forum Diskusi</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <div style="max-width: 1024px;" class="mx-auto">
+    <a href="tambah-diskusi">
+      <button type="button" class="btn btn-primary py-3 px-4" style="font-weight: 700;">Tambahkan Topik Diskusi</button>
+    </a>
+    {% for discussion in discussions %}
+    <div class="mt-4 p-4 border border-secondary border-1 rounded" style="background-color: #DFE6ED;">
+
+      <h3 style="font-weight: 700;">{{discussion.title}}</h3>
+      <div style="color: gray; font-size: 0.75rem;">
+        {{discussion.created}} oleh {{discussion.user}}
+      </div>
+
+      {% if discussion.message|length > 360 %}
+      <p class="discussion truncate">{{discussion.message}}</p>
+      <button class="btn btn-outline-primary truncateToggler">Lebih lengkap</button>
+      {% else %}
+      <p>{{discussion.message}}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <script>
+      var textHolder = document.querySelectorAll('.discussion');
+      var btn = document.querySelectorAll('.truncateToggler');
+
+      if (btn.length !== 0) {
+        console.log(btn.length);
+        for (let i = 0; i < btn.length; i++) {
+          let isActive = false;
+          btn[i].addEventListener('click', () => {
+            isActive = !isActive;
+            if (isActive) {
+              btn[i].innerHTML = "Sembunyikan"
+            } else {
+              btn[i].innerHTML = "Lebih lengkap"
+            }
+            textHolder[i].classList.toggle("truncate");
+          })
+        }
+      }
+
+    </script>
+    <!-- <span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="/logout" style="color: #026670;">Logout</a></span> -->
+  </div>
+  {% else %}
+  <br><br><br><br>
+  <div style="text-align: center;">
+    <h2 style="font-weight: bold;">Forum Diskusi</h2>
+    <span class="hello-msg" style="font-size: x-large;">Halo, silakan <a href="/login">Login</a> untuk berdiskusi!
+      😊</span>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock content %}

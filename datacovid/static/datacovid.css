@@ -72,7 +72,7 @@
     left: 20px;
     right: 20px;
     bottom: 20px;
-    background: #ebf5fc;
+    background: #ebe1ce;
     box-shadow: o 10px 20px rgba(0,0,0,0,1);
     border-radius: 15px;
     display: flex;
@@ -84,7 +84,7 @@
   .container .card:hover .box {
     transform: translateY(-50px);
     box-shadow: 0 10px 40px rgba(0,0,0,0,0.2);
-    background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    background: #cac3be;
   }
 
   .container .card .box .content {
@@ -102,38 +102,28 @@
     transition: 0.5s;
   }
 
-    table {
-      border-collapse: collapse;
-      width: 50%;
-      position:absolute;
-      left: 360px;
-      top: 900px;
-    }
-  
+  table {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+  }
+
+ 
     table, th, td {
-      border: 2px solid #201e44;
+      border: 2px solid #837e7b;
       padding: 8px;
     }
 
-    td {
-      text-align: center;
-    }
-  
-    table, tr:nth-child(even){background-color: #ffffff;}
-    table, tr:hover {background-color:#99b8fa;}
+    table, tr:nth-child(even){background-color: #f1edea;}
+    table, tr:hover {background-color:#bbb4b0;}
     table th {
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: left;
-      background-color: #201e44;
-      color: #99b8fa;
+      background-color: #444241;
+      color: #cac3be;
     }
-  
-    table.center {
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: auto;
-          margin-bottom: auto;
-        }
 
+
+   
     

@@ -36,15 +36,15 @@ PRODUCTION = os.getenv('DATABASE_URL') is not None
 # SECURITY WARNING: don't run with debug turned on in production!
 # If you want to enable debugging on Heroku for learning purposes,
 # set this to True.
-DEBUG = not PRODUCTION
+DEBUG = True
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 
 ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
+ALLOWED_HOSTS += ["covid-information-app.herokuapp.com"]
 
 if not PRODUCTION:
     ALLOWED_HOSTS += ['.localhost', '127.0.0.1', '[::1]']
-
 
 # Application definition
 
@@ -55,11 +55,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'diskusi',
     'kewaspadaan',
-    'Home',
+    'home',
     'datacovid',
     'login',
     'rujukan',
+    'vaksinasi',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +81,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates',
-            r'C:\Users\M. Margaretha Stella\Google Drive\Fasilkom\Semester 3\PBP\TK\pbp-tk\login\templates',
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
