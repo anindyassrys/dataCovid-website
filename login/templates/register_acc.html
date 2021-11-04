@@ -14,6 +14,7 @@
 <head>
 	<title>Registration</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+	<script src="sweetalert2.all.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{% static 'regis_style.css' %}" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -98,6 +99,34 @@
 			form_fields[field].className += ' form-control'
 		}
 	</script>
+	<script>
+        var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        var submitButton = document.getElementById('submit');
+        function alert(message, type) {
+            var wrapper = document.createElement('div')
+            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+            alertPlaceholder.append(wrapper)
+        }
+        $('#form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "",
+                data: {
+                    title: $('#title').val(),
+                    message: $('#message').val(),
+                    is_anonymous: $('#is_anon').prop("checked"),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    dataType: "json",
+                },
+                success: function () {
+                    submitButton.style.display = "none"
+                    alert("Topik baru berhasil ditambahkan", 'success')
+                },
+            })
+        })
+    </script>
 </body>
 </html>
 {% endblock %}
