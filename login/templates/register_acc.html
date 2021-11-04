@@ -14,9 +14,7 @@
 <head>
 	<title>Registration</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-	<script src="sweetalert2.all.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{% static 'regis_style.css' %}" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -69,13 +67,13 @@
 							{{form.password2}}
 						</div>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn btn-secondary" type="submit" value="Register Account">
+				 			<input class="btn btn-register" type="submit" value="Register Account">
 				   		</div>
 					</form>
 				</div>
 
 				<br>
-				{{form.errors}}
+				<!-- {{form.errors}} -->
 				
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
@@ -85,6 +83,118 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+
+        $("#form").on('submit', function(event) {
+			event.preventDefault();
+        
+			var first_name = $("#first_name").val();
+		  	var last_name = $("#last_name").val();
+			var username = $("#username").val();
+			var email = $("#email").val();
+			var password1 = $("#password1").val();
+			var password2 = $("#password2").val();
+
+        if (first_name.length == "" && last_name.length == "") {
+
+            Swal.fire({
+				type: 'warning',
+              	title: 'Oops...',
+              	text: 'Nama Wajib Diisi!'
+            });
+
+		} else if(email.length == "") {
+
+            Swal.fire({
+              	type: 'warning',
+              	title: 'Oops...',
+              	text: 'E-mail Wajib Diisi!'
+            });	
+
+        } else if(username.length == "") {
+
+            Swal.fire({
+              	type: 'warning',
+              	title: 'Oops...',
+              	text: 'Username Wajib Diisi!'
+            });
+
+          } else if(password1.length == "" && password2.length == "") {
+
+            Swal.fire({
+              	type: 'warning',
+              	title: 'Oops...',
+             	text: 'Password Wajib Diisi!'
+            });
+
+          } else {
+
+            $.ajax({
+
+              	url: "",
+              	type: "POST",
+              	data: {
+                  	"first_name": first_name,
+					"last_name" : last_name,
+                  	"username": username,
+					"email" : email,
+                  	"password1": password1,
+					"password2": password2
+              	},
+
+              success:function(response){
+
+                if (response == "success") {
+
+                  Swal.fire({
+                    type: 'success',
+                    title: 'Register Berhasil!',
+                    text: 'Silakan login!'
+                  });
+
+				  	$("#first_name").val();
+		  			$("#last_name").val();
+					$("#username").val();
+					$("#email").val();
+					$("#password1").val();
+					$("#password2").val();
+
+                } else {
+
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Register Gagal!',
+                    text: 'Silakan coba lagi!'
+                  });
+
+                }
+
+                console.log(response);
+
+              },
+
+              error:function(response){
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Opps!',
+                    text: 'server error!'
+                  });
+              }
+
+            })
+
+          }
+
+        }); 
+
+      });
+    </script>
+
 	<script>
 		var form_fields = document.getElementsByTagName('input')
 		form_fields[1].placeholder='Enter your first name';
@@ -99,34 +209,6 @@
 			form_fields[field].className += ' form-control'
 		}
 	</script>
-	<script>
-        var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-        var submitButton = document.getElementById('submit');
-        function alert(message, type) {
-            var wrapper = document.createElement('div')
-            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-
-            alertPlaceholder.append(wrapper)
-        }
-        $('#form').on('submit', function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "",
-                data: {
-                    title: $('#title').val(),
-                    message: $('#message').val(),
-                    is_anonymous: $('#is_anon').prop("checked"),
-                    csrfmiddlewaretoken: '{{ csrf_token }}',
-                    dataType: "json",
-                },
-                success: function () {
-                    submitButton.style.display = "none"
-                    alert("Topik baru berhasil ditambahkan", 'success')
-                },
-            })
-        })
-    </script>
 </body>
 </html>
 {% endblock %}
