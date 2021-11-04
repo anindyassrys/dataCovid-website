@@ -1,4 +1,8 @@
-.btn btn-reset input {
+.btn {
+    background-color: antiquewhite;
+}
+
+.btn-reset {
     background-color: #6e4141; 
     border: none;
     color: white;
@@ -8,7 +12,7 @@
     display: inline-block;
 }
 
-.btn btn-register input {
+.btn-register {
     background-color: #957f70; 
     border: none;
     color: white;
@@ -16,4 +20,4 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-}
+}   
