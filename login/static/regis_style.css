@@ -3,7 +3,7 @@
     border-radius: 12px;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 20px;
     cursor: pointer;
     height: 50px;
     margin-top: 5px;
@@ -19,7 +19,7 @@
 .remove:hover{
     background: inherit;
     color: #752222;
-    border-bottom: 2px solid
+    border-bottom: 2px solid;
 }
 
 .regis {
@@ -28,7 +28,7 @@
     border: none;
     color: white;
     cursor: pointer;
-    padding: 10px 24px;
+    padding: 5px 24px;
     height: 50px;
     margin-top: 5px;
     margin-right: 25px;
@@ -43,5 +43,5 @@
 .regis:hover {
     background: inherit;
     color: #4b6148;
-    border-bottom: 2px solid
+    border-bottom: 2px solid;
 }
