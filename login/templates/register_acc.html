@@ -8,14 +8,14 @@
 {% endblock css %}
 {% block content %}
 
+{% block title %}
+Registrasi - Covid App
+{% endblock title %}
+
 <!DOCTYPE html>
 <html>
-    
-<head>
-	<title>Registration</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-	<link rel="stylesheet" type="text/css" href="{% static 'regis_style.css' %}" />
-</head>
+	<link rel="stylesheet" href="{% static 'regis_style.css' %}" />
 
 <body>
 	<br><br><br><br><br><br>
@@ -68,6 +68,7 @@
 						</div>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
 				 			<input class="btn btn-register" type="submit" value="Register Account">
+							<input class="btn btn-reset" type="reset" value="Reset"> 
 				   		</div>
 					</form>
 				</div>
