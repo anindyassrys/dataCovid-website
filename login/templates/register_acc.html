@@ -147,15 +147,14 @@
 					"password2": password2
               	},
 
-              success:function(response){
+            success:function(response){
 
                 if (response == "success") {
-
-                  Swal.fire({
-                    type: 'success',
-                    title: 'Register Berhasil!',
-                    text: 'Silakan login!'
-                  });
+					Swal.fire({
+                    	type: 'success',
+                    	title: 'Register Berhasil!',
+                    	text: 'Silakan login!'
+                  	});
 
 				  	$("#first_name").val();
 		  			$("#last_name").val();
@@ -165,34 +164,28 @@
 					$("#password2").val();
 
                 } else {
-
-                  Swal.fire({
-                    type: 'error',
-                    title: 'Register Gagal!',
-                    text: 'Silakan coba lagi!'
-                  });
+					Swal.fire({
+                    	type: 'error',
+                    	title: 'Register Gagal!',
+                    	text: 'Silakan coba lagi!'
+                  	});
 
                 }
 
-                console.log(response);
+            console.log(response);
+		},
 
-              },
-
-              error:function(response){
-                  Swal.fire({
-                    type: 'error',
-                    title: 'Opps!',
-                    text: 'server error!'
-                  });
-              }
-
-            })
-
-          }
-
-        }); 
-
-      });
+            error:function(response){
+				Swal.fire({
+                	type: 'error',
+                	title: 'Opps!',
+                	text: 'server error!'
+				});
+			}
+		}) 
+	}
+}); 
+});
     </script>
 
 	<script>
