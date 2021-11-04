@@ -7,23 +7,75 @@ Forum Diskusi - Covid App
 
 <body class="bg-dark">
     {% block content %}
-    <form action="" method="POST">
+    <form action="" method="POST" id="form">
         {% csrf_token %}
-        <div style="width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center">
+        <div
+            style="width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center">
+            <div id="liveAlertPlaceholder"></div>
             <div class="fw-bold lh-1.5">Topik Diskusi Baru</div>
             <div class="fw-bold lh-1.5 fs-1">Covid-19</div>
-            {% for field in form %}
+            <!-- {% for field in form %}
             <div style="margin-top: 20px; align-self: flex-start;">
                 <div>{{field.label_tag}}</div>
                 <div>{{ field }}</div>
             </div>
-            {% endfor %}
+            {% endfor %} -->
+            <div style="margin-top: 20px; align-self: flex-start; width: 100%;">
+                <div style="display: flex; flex-direction: column;">
+                    <label for="title">Judul</label>
+                    <input class="text" id="title" type="text" name="title" style="padding: 8px; border: none; margin-top: 4px;" placeholder="Judul diskusi">
+                </div>
+                <div style="margin-top: 20px;">
+                    <label for="message">Pesan</label>
+                    <textarea class="textarea" placeholder="isi pesanmu..." style="border: none; padding: 8px; margin-top: 4px;" rows="8" cols="41" id="message" type="textarea" name="message"></textarea>
+                    <style>
+                        .textarea:focus,
+                        .text:focus{
+                            outline: none;
+                        }
+                    </style>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <input id="is_anon" type="checkbox" name="is_anon" style="width: 20px; height: 20px;" />
+                    <label for="is_anon" style="margin-left: 12px;">Sembunyikan nama</label>
+                </div>
+            </div>
+
             <div class="d-flex justify-content-between w-100" style="margin-top: 32px;">
                 <button class="btn btn-secondary" onClick="javascript:history.go(-1);">Kembali</button>
-                <input type="submit" class="btn btn-primary" value="Submit">
+                <input id="submit" type="submit" class="btn btn-primary" value="Submit">
             </div>
         </div>
     </form>
+    <div id="output"></div>
+    <script>
+        var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        var submitButton = document.getElementById('submit');
+        function alert(message, type) {
+            var wrapper = document.createElement('div')
+            wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+            alertPlaceholder.append(wrapper)
+        }
+        $('#form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "",
+                data: {
+                    title: $('#title').val(),
+                    message: $('#message').val(),
+                    is_anonymous: $('#is_anon').prop("checked"),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    dataType: "json",
+                },
+                success: function () {
+                    submitButton.style.display = "none"
+                    alert("Topik baru berhasil ditambahkan", 'success')
+                },
+            })
+        })
+    </script>
     {% endblock content %}
 </body>
 
