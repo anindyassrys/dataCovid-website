@@ -1,7 +1,8 @@
 from django import forms
-from .models import Waspada
+from .models import Indikator
 
-class NoteForm(forms.ModelForm):
+
+class SaranForm(forms.ModelForm):
     class Meta:
-        model = Waspada
-        fields = ['daerah', 'tingkat_kewaspadaan']
+        model = Indikator
+        fields = ['indikator']

@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class Indikator(models.Model):
+    indikator = models.CharField('indikator', max_length=100)
