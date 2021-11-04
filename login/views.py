@@ -57,11 +57,11 @@ def logoutUser(request):
 
 def userValidation(request):
     User = get_user_model()
-    users = User.objects.all()
+    userA = User.objects.all()
 
-    if request.is_ajax():
+    if request():
         username = request.POST.get("username")
-        for user in users:
-            if username == user.profile.username:
+        for user in userA:
+            if username == user.username:
                 return JsonResponse({"error": "Sorry, this username is already taken"}, status=400)
     return JsonResponse({"success": "Username available"}, status=200)
