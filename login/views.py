@@ -55,13 +55,13 @@ def logoutUser(request):
 	logout(request)
 	return redirect('login:login')
 
-def userValidation(request):
-    User = get_user_model()
-    userA = User.objects.all()
+# def userValidation(request):
+#     User = get_user_model()
+#     userA = User.objects.all()
 
-    if request():
-        username = request.POST.get("username")
-        for user in userA:
-            if username == user.username:
-                return JsonResponse({"error": "Sorry, this username is already taken"}, status=400)
-    return JsonResponse({"success": "Username available"}, status=200)
+#     if request():
+#         username = request.POST.get("username")
+#         for user in userA:
+#             if username == user.username:
+#                 return JsonResponse({"error": "Sorry, this username is already taken"}, status=400)
+#     return JsonResponse({"success": "Username available"}, status=200)

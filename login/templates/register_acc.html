@@ -9,6 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+<script src="sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="{% static 'regis_style.css' %}"/>
 {% endblock css %}
 </head>
@@ -91,33 +92,53 @@ Registration
 		</div>
 	</div>
 
-    <script>
-	var changeTimer = false;
-	$("#id_username").on("change", function () {
-		let username_ajax = $("#id_username").val();
-		if (changeTimer !== false) clearTimeout(changeTimer);
-        changeTimer = setTimeout(function () {
-			$.ajax({
-				type: "POST",
-            	url: "userValidation",
-            	data: {
-					csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
-					usename: username_ajax,
-            },
-            success: function (response) {
-				$("#submit").prop("disabled", false);
-				document.getElementById("username-n").innerText = "Username available";
-				document.getElementById("username-n").style.color = "#3836c9";
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-				$("#submit").prop("disabled", true);
-              	document.getElementById("username-n").innerText = "Sorry, this username is already taken";
-				document.getElementById("username-n").style.color = "#d60000";
-            },
-          });
-          changeTimer = false;
-        }, 300);
-      });
+    <!-- <script> -->
+		<script>
+		$(".remove").click(function(){
+			var id = $(this).parents("tr").attr("id");
+			if(confirm('This action cannot be undone. Are you sure want to delete this form?')) {
+            $.ajax({
+                url: '',
+                type: 'GET',
+                data: {id: id},
+                error: function() {
+                alert('Something is wrong, could not delete record');
+                },
+                success: function(data) {
+                    $("#" + id).remove();
+                    alert("Form delete successfully.");
+					  
+                }
+            });
+        }
+    });
+	</script>
+	<!-- // var changeTimer = false;
+	// $("#id_username").on("change", function () {
+	// 	let username_ajax = $("#id_username").val();
+	// 	if (changeTimer !== false) clearTimeout(changeTimer);
+    //     changeTimer = setTimeout(function () {
+	// 		$.ajax({
+	// 			type: "POST",
+    //         	url: "userValidation",
+    //         	data: {
+	// 				csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+	// 				usename: username_ajax,
+    //         },
+    //         success: function (response) {
+	// 			$("#submit").prop("disabled", false);
+	// 			document.getElementById("username-n").innerText = "Username available";
+	// 			document.getElementById("username-n").style.color = "#3836c9";
+    //         },
+    //         error: function (xhr, ajaxOptions, thrownError) {
+	// 			$("#submit").prop("disabled", true);
+    //           	document.getElementById("username-n").innerText = "Sorry, this username is already taken";
+	// 			document.getElementById("username-n").style.color = "#d60000";
+    //         },
+    //       });
+    //       changeTimer = false;
+    //     }, 300);
+    //   });
 //       $(document).ready(function() {
 
 //         $("#form").on('submit', function(event) {
@@ -216,7 +237,7 @@ Registration
 // 	}
 // }); 
 // });
-    </script>
+    </script> -->
 
 	<script>
 		var form_fields = document.getElementsByTagName('input')
