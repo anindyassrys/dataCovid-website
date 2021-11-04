@@ -6,7 +6,12 @@ from datetime import date
 import random
 
 def vaksinasi(request):
-    kategoris = Kategori.objects.all().values()
+
+    try:
+        kategoris = Kategori.objects.all().values()
+    except kategoris.DoesNotExist:
+        kategoris = None
+    # kategoris = Kategori.objects.all().values()
 
     update()
 
