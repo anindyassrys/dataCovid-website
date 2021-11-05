@@ -1,9 +1,9 @@
-# from django.db import models
+from django.db import models
 # # from django.db.models.signals import post_save
 # # from django.dispatch import receiver
 
 
-# # Create your models here.
+# Create your models here.
 
 # User_CHOICES = [
 #     ('tenaga kesehatan', 'Tenaga Kesehatan'),
