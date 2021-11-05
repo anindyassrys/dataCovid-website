@@ -5,4 +5,5 @@ app_name = 'kewaspadaan'
 
 urlpatterns = [
     path('', views.kewaspadaan, name='kewaspadaan'),
+    path('add', views.add, name='addIndikator'),
 ]

@@ -2,4 +2,5 @@ from django.db import models
 
 
 class Indikator(models.Model):
-    indikator = models.CharField('indikator', max_length=100)
+    name = models.CharField(max_length=100, null=True)
+    source = models.CharField(max_length=254, null=True)

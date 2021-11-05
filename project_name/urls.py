@@ -21,7 +21,7 @@ from home.views import index as home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rumah-sakit-rujukan/', include('rujukan.urls')),
-    path('kewaspadaan', include('kewaspadaan.urls')),
+    path('kewaspadaan/', include('kewaspadaan.urls')),
     path('home', include('home.urls')),
     path('diskusi/', include(diskusi_urls)),
     path('data-covid/', include('datacovid.urls')),

@@ -15,29 +15,35 @@
           changeIframe();
         });
         function changeIframe(){
-            if (document.getElementById("indikator").value == "1") {
+            if (document.getElementById("indikator").value == "Kasus Harian") {
                 $.ajax({
                     success: function(result){
                     $("#judul").text("Kasus Harian");
                     $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/gn31x/1/");
                 }});
-            }else if (document.getElementById("indikator").value == "2") {
+            }else if (document.getElementById("indikator").value == "Kasus Aktif") {
                 $.ajax({
                     success: function(result){
                     $("#judul").text("Kasus Aktif");
                     $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/hMMxg/1/");
                 }});
-            }else if (document.getElementById("indikator").value == "3") {
+            }else if (document.getElementById("indikator").value == "Case Fatality Rate") {
                 $.ajax({
                     success: function(result){
                     $("#judul").text("Case Fatality Rate (CFR)");
                     $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/3FH2E/1/");
                 }});
-            }else if (document.getElementById("indikator").value == "4") {
+            }else if (document.getElementById("indikator").value == "Rasio Lacak Isolasi") {
                 $.ajax({
                     success: function(result){
                     $("#judul").text("Rasio Lacak Isolasi (RLI)");
                     $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/b1RaZ/1/");
+                }});
+            }else{
+                $.ajax({
+                    success: function(result){
+                    $("#judul").text("Mohon Maaf, Peta Resiko ini belum dapat ditampilkan");
+                    $("#datawrapper-chart").attr("src","");
                 }});
             }
         }
@@ -66,10 +72,9 @@
     <div class="form-group">
       <label for="indikator">Pilih Indikator</label>
       <select class="form-control" id="indikator" onchange="changeIframe()">
-        <option value="1">Kasus Harian</option>
-        <option value="2">Kasus Aktif</option>
-        <option value="3">Case Fatality Rate</option>
-        <option value="4">Rasio Lacak Isolasi</option>
+      {% for indikator in indikators %}
+        <option value="{{ indikator.name }}">{{ indikator.name }}</option>
+      {% endfor %}
       </select>
     </div>
   </form>
@@ -88,17 +93,9 @@
   
   <br>
   <h4 class="blockquote">*Peta indeks kewaspadaan di atas dibuat dengan referensi dari situs <a href = 'https://kawalcovid19.id/'>kawalcovid19</a> dengan pengubahan seperlunya.</h4>
-  <br>
 
-  <h2><b>Saran Indikator</b></h2>
-  <p class="blockquote">Silakan masukkan saran indikator yang perlu ditambahkan pada form di bawah</p>
-  <form method="POST" action="" class="form-group"> 
-    {% csrf_token %}
-      <label for="saran" style="color: black">Indikator</label>
-      <input type="text" id="saran" class="form-control" placeholder="saran indikator yang ingin ditambah" name="indikator" >
-    <br>
-        <input type ="submit" value="Submit" class="submitButton">
-  </form>
+	<button class="button" onclick="location.href='/kewaspadaan/add'" >Tambahkan Indikator</button>
+  <br>
   <br>
 
 </div>
