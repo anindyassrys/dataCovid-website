@@ -124,39 +124,13 @@ Registration
 		// var password2
 		$(".regis").click(function() {
 
-		if ($('#first_name'.length == "" && $('#last_name'.length == ""))) {
+		if ($('#first_name'.length == "" || $('#last_name'.length == "" || $('#email'.length == "" || 
+		($('username'.length == "" || $('#password1'.length == "" || $('#password2'.length == "")))))))) {
 
             Swal.fire({
 				type: 'warning',
               	title: 'Oops...',
-              	text: 'Nama Wajib Diisi!',
-				setInterval: '2000'
-            });
-
-		} else if($('#email'.length == "")) {
-
-            Swal.fire({
-              	type: 'warning',
-              	title: 'Oops...',
-              	text: 'E-mail Wajib Diisi!',
-				setInterval: '2000'
-            });	
-
-        } else if($('username'.length == "")) {
-
-            Swal.fire({
-              	type: 'warning',
-              	title: 'Oops...',
-              	text: 'Username Wajib Diisi!',
-				setInterval: '2000'
-            });
-
-        } else if($('#password1'.length == "" && $('#password2'.length == ""))) {
-
-            Swal.fire({
-              	type: 'warning',
-              	title: 'Oops...',
-             	text: 'Password Wajib Diisi!',
+              	text: 'Semua Kolom Wajib Diisi!',
 				setInterval: '2000'
             });
 
