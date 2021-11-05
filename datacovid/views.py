@@ -3,6 +3,7 @@ from .models import DataCovid
 from .forms import dataform
 from django.core import serializers
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def datacovid(request):
@@ -13,6 +14,7 @@ def datacovid(request):
     }
     return render(request, 'datacovid.html', response)
 
+@login_required(login_url='/admin/login/')
 def formdata(request):
     add_data = dataform(request.POST or None)
     if (add_data.is_valid() and request.method == 'POST'):
@@ -22,10 +24,10 @@ def formdata(request):
     return render(request, 'datacovid_form.html', response)
 
 def load_more(request):
-    offset = int(request.POST['offset'])
+    offset = int(request.POST.get('offset', 0))
     limit = 3
-    posts = datacovid.objects.all()[offset:limit+offset]
-    totalData = datacovid.objects.count()
+    posts = DataCovid.objects.all()[offset:limit+offset]
+    totalData = DataCovid.objects.count()
     data = {}
     posts_json = serializers.serialize('json', posts)
     return JsonResponse(data={
