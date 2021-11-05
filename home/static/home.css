@@ -215,6 +215,8 @@ div.carousel-indicators{
 
 a.sumber{
     color: black;
+    justify-content: left;
+    text-align: left;
 }
 
 a.sumber:hover,
