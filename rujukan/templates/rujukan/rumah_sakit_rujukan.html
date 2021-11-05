@@ -55,10 +55,31 @@
 		margin-right: 4px;
 		position: relative;
 		top: 2px;
-		color: #5b5856
-;
+		color: #5b5856;
 	}
 
+	.button{
+		background-color: rgba(202,195,190,255);
+		border-style: none;
+		color: rgba(99,72,50,255);
+		padding: 4px 4px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: smaller;
+		margin-left: 0.5rem;
+
+		transition: all .2s;
+	}
+
+	.button:hover{
+		background-color: rgba(99,72,50,0.7);
+		color: white;
+	}
+
+	.button:active{
+		background-color: rgba(99,72,50,0.3);
+	}
 	
 </style>
 {% endblock %}
@@ -78,6 +99,10 @@ Rumah Sakit Rujukan
 			<option value="{{ wilayah.wid }}">{{ wilayah.nama }}</option>
 		{% endfor %}
 	</select>
+	
+	{% if request.user.is_staff %}
+	<button class="button" onclick="location.href='/rumah-sakit-rujukan/tambah'" >Tambah Rumah Sakit</button>
+	{% endif %}
 
 	<div id="list">
 		<div id="emptylist">
@@ -87,7 +112,6 @@ Rumah Sakit Rujukan
 		<div id="listRS"></div>
 	</div>
 </div>
-<span></span>
 <script>
 
 	$(document).ready(function(){

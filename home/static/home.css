@@ -29,8 +29,16 @@ div {
 
 div.container-xxl{
     text-align: center;
-    font-size: 500%;
-    padding: 25px 25px 25px 25px;
+    padding: 175px 25px 175px 25px;
+}
+
+.selamat-datang{
+    top: 3rem;
+    right: 3rem;
+    bottom: 3rem;
+    left: 3rem;
+    font-size: 100px;
+    text-align: center;
 }
 
 .paraf-selamat-datang{
@@ -38,43 +46,30 @@ div.container-xxl{
     text-align: center;
 }
 
-.board{
+/* .board{
     width: 200px;
     column-count: 2;
     column-gap: 1rem;
     justify-content: center;
-}
+} */
 
-.card{
-    /* width: 84%;
-    background: #cac3be;
-    padding: 8%;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    justify-content: center; */
+/* .card{
     width: 84%;
     margin-bottom: 20px;
     border-radius: 6px;
     background-color: var(--background-color);
     color: #cac3be;
     padding: .5em 1em;
-    border: none;
-    outline:none;
+    border: #cac3be;
+    outline: #edeae5;
     position: relative;
     cursor: pointer;
 
     --background-color: azure;
     --accent-color: #FF2442;
-}
+} */
 
-.card-1::before{
-    /* background: #cac3be;
-    box-shadow: inset 0 0 0 0 #ff3434;
-    transition: ease-out 0.3s;
-    font-size: 2rem;
-    outline: none;
-    justify-content: center; */
-
+/* .card-1::before{
     content: '';
     position: absolute;
     top: 0;
@@ -86,11 +81,10 @@ div.container-xxl{
 
     transition: transform 300ms ease-in-out;
     transform: scaleX(0);
-    /* transform-origin: left; */
+    transform-origin: left; */
 
-}
 
-.card-1:hover::before,
+/* .card-1:hover::before,
 .card-1:focus::before{
     transform: scaleX(1);
 }
@@ -103,11 +97,8 @@ div.container-xxl{
 .card-1:hover,
 .card-1:focus{
     color: #FF2442;
-}
-
-/* .card-1:hover{
-    box-shadow: inset 84% 0 0 0 #ff3434;
 } */
+
 
 /* .card span{
     font-size: 3rem;
@@ -141,9 +132,6 @@ div.container-xxl{
     width: 100vh;
 }
 
-.carousel slide{
-    justify-content: center;
-}
 
 .tengah{
     justify-content: center;
@@ -185,13 +173,82 @@ div.container-xxl{
     color: #edeae5;
 }
 
-.accordion.accordion-button:active::before,
+/* .accordion.accordion-button:active::before,
 .accordion.accordion-button:focus::before{
     color: #edeae5;
     border-collapse: unset;
     box-shadow: none;
+} */
+
+.carousel-item {
+    height: 32rem;
+    background-color: azure;
+    color: azure;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+
 }
-  
+
+.container.car{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+}
+
+.overlay-image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 1.0;
+}
+
+div.carousel-indicators{
+    color: black;
+}
+
+a.sumber{
+    color: black;
+}
+
+a.sumber:hover,
+a.sumber:focus{
+    color: #cac3be;
+}
+
+div.card{
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    background-color: #cac3be;
+    justify-content: center;
+}
+
+div.card:hover,
+div.card:focus{
+    transition: ease-in-out;
+    color: azure;
+    background-color: #000D6B;
+}
+
+div.card.a:hover,
+div.card.a:focus{
+    transition: ease-in-out;
+    background-color: #FF2442;;
+}
+
+div.row.a{
+    justify-content: center;
+}
+
 
 #welcome{
     min-height: 100vh;
@@ -216,8 +273,8 @@ div.container-xxl{
     background-color: #cac3be;
     border-color: #cac3be;
 }
-#acccoll:active::before, 
-#acccoll:focus::before{
+#acccoll:active, 
+#acccoll:focus{
     color: #edeae5;
     box-shadow: none!important;
 }
