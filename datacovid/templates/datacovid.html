@@ -19,64 +19,210 @@ Data Covid-19
 
 {% block content %}
 <body>
-<h2 class="header" style="color: #252B42;"><strong>Data Covid-19 Nasional</strong></h2> 
-<p id="header-2" style="color: #827E7E;">Data berikut merupakan akumulasi data pasien Covid-19 yang dirawat di Indonesia</p>
-<div class="container" id="card-1">
-  <div class="card">
-    <div class="box">
-      <div class="content">
-        <h6>ISOLASI</h6>
-        <h2><b>956</b></h2>
+  <br><br><br><br>
+  <div>
+    <h1 class="text-lg-center" style="color: #252B42;"><strong>Data Covid-19 Nasional</strong></h1> 
+    <h5 class="text-center" style="color: #827E7E;">Data berikut merupakan akumulasi data pasien Covid-19 yang dirawat di Indonesia</h5>
+  </div>
+  <br><br>
+  <div>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Kasus Terkonfirmasi Covid-19 Nasional</h5>
+          </div>
+          <div class="card-body">
+            <h4 class="card-text" style="color: rgb(143, 45, 45);">4.268.904</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Kasus Sembuh Covid-19 Nasional</h5>
+          </div>
+          <div class="card-body">
+            <h4 class="card-text" style="color: rgb(143, 45, 45);">4.268.904</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Kasus Isolasi Covid-19 Nasional</h5>
+          </div>
+          <div class="card-body">
+            <h4 class="card-text" style="color: rgb(143, 45, 45);">4.268.904</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="container" id="card-2">
-  <div class="card">
-    <div class="box">
-      <div class="content">
-        <h6>MENINGGAL</h6>
-        <h2><b>956</b></h2>
-      </div>
-    </div>
+<br>
+<div>
+  <p style="color: #827E7E;">*Data kasus Covid-19 adalah data dummy yang resmi diumumkan Kemenkes RI</p>
+</div>
+  <br><br>
+  <div>
+    <div class="container-xl">
+    <div class="table-responsive-md">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <td colspan=4 class="text-center"><strong>SUSPEK</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3.927.113 (95,2%) ISOLASI</td>
+            <td>197.517 (4,8%) SEMBUH</td>
+            <td>40 (0,0%) MENINGGAL</td>
+            <td>2.311 (0,1%) TOTAL</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td colspan=4 class="text-center"><strong>KONTAK ERAT</strong></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>1.822.917 (99,7%) ISOLASI</td>
+            <td>5.875 (0,3%) SEMBUH</td>
+            <td>40 (0,0%) MENINGGAL</td>
+            <td>2.311 (0,1%) TOTAL</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td colspan=4 class="text-center"><strong>PELAKU PERJALANAN</strong></td>
+          </tr>
+        </tbody>
+        <tbody>
+        <tr>
+          <td>3.927.113 (95,2%) ISOLASI</td>
+          <td>197.517 (4,8%) SEMBUH</td>
+          <td>40 (0,0%) MENINGGAL</td>
+          <td>2.311 (0,1%) TOTAL</td>
+        </tr>
+      </tbody>
+      </table>
+    </div> 
   </div>
 </div>
-<div class="container" id="card-3">
-  <div class="card">
-    <div class="box">
-      <div class="content">
-        <h6>SEMBUH</h6>
-        <h2><b>956</b></h2>
+  <div>
+    <p class="tex-sm" style="color: #827E7E;">*Data suspek, kontak erat, dan pelaku perjalanan merupakan data dummy</p>
+  </div>
+  <br><br><br>
+  <div>
+    <h3 class="text-lg-center" style="color: #252B42;"><strong>Grafik Covid-19 Nasional</strong></h3>
+  </div>
+  <div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Kasus positif Covid-19'],
+          ['Januari',  1000],
+          ['Februari',  1170],
+          ['Maret',  660],
+          ['April',  1030]
+        ]);
+
+        var options = {
+          title: 'Kasus positif Covid-19 di Indonesia Kuarter I 2021',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <body>
+      <div class="container">
+      <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    </body>
+  </div>
+</div>
+  <br><br><br><br>
+  <div>
+    <h3 class="text-lg-center" style="color: #252B42;"><strong>Data Covid-19 Per Daerah</strong></h3>
+  </div>
+  <br>
+  <div class="container-sm">
+  <div class="row gx-5 kasus-wrapper">
+      {% for element in three_data %}
+      <div class="col-lg-4 mb-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Daerah: {{ element.daerah }}</h5>
+          <p class="card-text">Kasus: {{ element.positif }}</p>
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
+  </div>
+  <div>
+    <p class="text-center">
+      <a class="btn btn-dark" href="/data-covid/formdata" role="button" id="tambahBtn">Tambah</a>
+    </p>
+    </div>
+    <div>
+    <p class="text-center">
+      <button class="btn btn-dark" id="loadmoreBtn">Load More</button>
+    </p>
+    </div>
 <br><br><br><br>
-<div>
-<h2><strong>Data Covid Per Daerah</strong></h2> 
-<p style="color: #827E7E;">Data Covid Hari ini</p>
-</div>
-<div>
-<table>
-  <tr>
-    <th>Provinsi</th>
-    <th>Jumlah kasus positif</th>
-  </tr>
-  <!-- TODO loop from Friend model -->
-  <!-- EXAMPLE SECTION -->
-  {% for element in data %}
-  <tr>
-    <td>{{ element.daerah }}</td>
-    <td>{{ element.positif }}</td>
-  </tr>
-  {% endfor %}
-  </table>
-  </div>
-  <br><br><br><br>
-  <div class="position-relative">
-    <div class="position-absolute top-100 start-100 translate-middle"></div>
-    <a class="btn btn-primary" href="/data-covid/formdata" role="button">Tambah</a>
-  </div>   
-  <br><br><br><br>
-</body>
-    <!-- </html> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+  <script>
+      $(document).ready(function(){
+          $("#loadmoreBtn").on('click',function(){
+              var _currentResult=$(".mb-5").length;
+              // Run Ajax
+              $.ajax({
+                  url:"url/load-more",
+                  type:'post',
+                  data:{
+                      'offset':_currentResult,
+                      'csrfmiddlewaretoken':"{{csrf_token}}"
+                  },
+                  dataType:'json',
+                  beforeSend:function(){
+                      $("#loadmoreBtn").addClass('disabled').text('Loading..');
+                  },
+                  success:function(res){
+                      var _html='';
+                      var json_data=$.parseJSON(res.posts);
+                      $.each(json_data,function(index,data){
+                          _html+= '<div class="col-lg-4 mb-5">\
+                          <div class="card">\
+                            <div class="card-body">\
+                              <h5 class="card-title">Daerah:'+data.fields.daerah+'</h5>\
+                              <p class="card-text">Kasus: '+data.fields.positif+'</p>\
+                              </div>\
+                              </div>\
+                            </div>';
+                      });
+                      $(".kasus-wrapper").append(_html);
+                      var _countTotal=$(".mb-5").length;
+                      if(_countTotal==res.totalResult){
+                          $("#loadmoreBtn").remove();
+                      }else{
+                          $("#loadmoreBtn").removeClass('disabled').text('Load More');
+                      }
+                  }
+              });
+          });
+      });
+  </script> 
+  </body> 
     {% endblock %}

@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import DataCovid
 from .forms import dataform
+from django.core import serializers
+from django.http import JsonResponse
 
 # Create your views here.
 def datacovid(request):
     data = DataCovid.objects.all()
-    response = {'data': data}
+    three_data = data[:3]
+    response = {'data': data,
+    'three_data' : three_data
+    }
     return render(request, 'datacovid.html', response)
 
 def formdata(request):
@@ -15,3 +20,15 @@ def formdata(request):
         return redirect('/data-covid')
     response = {'formdata': add_data}
     return render(request, 'datacovid_form.html', response)
+
+def load_more(request):
+    offset = int(request.POST['offset'])
+    limit = 3
+    posts = datacovid.objects.all()[offset:limit+offset]
+    totalData = datacovid.objects.count()
+    data = {}
+    posts_json = serializers.serialize('json', posts)
+    return JsonResponse(data={
+        'posts': posts_json,
+        'totalResult': totalData
+    })

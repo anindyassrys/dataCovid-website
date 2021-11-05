@@ -1,26 +1,3 @@
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    
-    position: absolute;
-    left: 537px;
-    top: 140px;     
-  }
-  
-  #header-2{
-    position: absolute;
-    width: 1053px;
-    height: 32px;
-    left: 190px;
-    top: 183px;
-    font-size: 24px;
-    line-height: 32px;
-    /* identical to box height, or 133% */
-    letter-spacing: 0.1px; 
-  }
-
   #card-1 {
     position: absolute;
     width: 275px;
@@ -110,7 +87,7 @@
 
  
     table, th, td {
-      border: 2px solid #837e7b;
+      border: 2px solid #271910;
       padding: 8px;
     }
 
@@ -123,7 +100,5 @@
       background-color: #444241;
       color: #cac3be;
     }
-
-
    
     
