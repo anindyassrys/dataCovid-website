@@ -4,5 +4,7 @@ fetch('https://corona.lmao.ninja/v2/countries/indonesia')
     return response.json();
 })
 .then((data)=>{
+    document.getElementById("cases").innerHTML = data.cases;
     document.getElementById("todayCases").innerHTML = data.todayCases;
+    
 })
