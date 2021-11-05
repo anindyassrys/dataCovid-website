@@ -32,9 +32,9 @@ Registration
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
-					<form method="POST" action="">
+					<form method="POST" action="" id="form">
 						{% csrf_token %}
-                        <div class="input-group mb-2">
+                        <div id = "first_name" class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-solid fa-user-plus"></i></span>
 							</div>
@@ -70,9 +70,13 @@ Registration
 							</div>
 							{{form.password2}}
 						</div>
+						<div style="display: flex; width: 100%">
+							<p>Tipe pengguna</p>
+							{{ form.user_role }}
+						</div>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
 							<button class="regis">Register Account</button>
-							<button class="remove">Reset</button>
+							<button type="reset" class="remove">Reset</button>
 				   		</div>
 					</form>
 				</div>
@@ -83,7 +87,7 @@ Registration
 					<p id="username-n-p"></p>
 				  </div> -->
 				  <dd style="color: #752222;">
-					{{ form.errors }}
+					{% if form.errors|length < 7 %} {{ form.errors }} {% endif %}
 				  </dd>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
@@ -108,7 +112,8 @@ Registration
 					username: $('#username').val(), 
 					email: $('#email').val(), 
 					password1: $('#password1').val(), 
-					password2: $('#password2').val()},
+					password2: $('#password2').val()
+				},
                 error: function() {
                 alert('Something is wrong, could not delete record');
                 },
@@ -122,8 +127,10 @@ Registration
     });
 	</script>
 	<script>
-		var form = document.getElementsByTagName('form');
-		// var first_name 
+		var form = document.getElementById('form');
+		var first_name = $("#first_name").val();
+		var fname = first_name.length;
+		console.log(fname);
 		// var last_name 
 		// var username 
 		// var email 
@@ -131,15 +138,16 @@ Registration
 		// var password2
 		$(".regis").click(function() {
 
-		if ($('#first_name'.length == "" || $('#last_name'.length == "" || $('#email'.length == "" || 
-		($('username'.length == "" || $('#password1'.length == "" || $('#password2'.length == "")))))))) {
-
+		// if ($('#first_name'.length == "" || $('#last_name'.length == "" || $('#email'.length == "" || 
+		// ($('username'.length == "" || $('#password1'.length == "" || $('#password2'.length == "")))))))) {
+			// console.log(first_name);
+			if(fname == 0){
             Swal.fire({
 				type: 'warning',
               	title: 'Oops...',
-              	text: 'Semua Kolom Wajib Diisi!',
-				setInterval: '2000'
+              	text: 'Semua Kolom Wajib Diisi!'
             });
+			console.log("test");
 
 		} else {
             $.ajax({
@@ -166,8 +174,7 @@ Registration
 					Swal.fire({
                     	type: 'success',
                     	title: 'Registrasi Berhasil!',
-                    	text: 'Silakan login!',
-						setInterval: '2000'
+                    	text: 'Silakan login!'
 					});
 				} else {
 					Swal.fire({
