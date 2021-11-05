@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {%load static%}
 {%block content%}
 <!DOCTYPE html>
@@ -6,21 +7,29 @@
         <meta charset="UTF-8" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
-    <body> 
-        <h2 style="color: #c4d4f7;"><strong>Form Data Covid</strong></h2>
+    <body>
+      <br><br><br><br>
+      <div> 
+        <h2 class="text-center" style="color: #000000;"><strong>Form Data Covid</strong></h2>
+        <p class="text-center" style="color: #000000;">Silakan isi form di bawah ini untuk menambahkan data daerah kasus Covid-19😊</p>
+      </div>
+      <div>
+        <div class="container">
         <form method="POST" action="" class="addForm"> {% csrf_token %}
             <div class="col">
               <label for="toField" style="color: rgb(0, 0, 0)">Daerah:</label>
-            <input type="text" id="toField" class="form-control" placeholder="Write receiver name" name="daerah" >
+            <input type="text" id="toField" class="form-control" placeholder="Tulis nama daerah" name="daerah" >
           </div>
         <br>
         <div class="col">
           <label for="fromField" style="color: rgb(0, 0, 0)">Kasus positif:</label>
-            <input type="text" id="fromField" class="form-control" placeholder="Write sender name" name="positif">
+            <input type="text" id="fromField" class="form-control" placeholder="Tulis jumlah kasus positif" name="positif">
         </div>
         <br>
-            <input type ="submit" value="Submit" class="submitButton">
+          <input type ="submit" value="Submit" class="submitButton">
         </form>
+      </div>
+    </div>
         </body>
         </html>
         {%endblock content%}
