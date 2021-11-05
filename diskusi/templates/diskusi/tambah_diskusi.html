@@ -53,6 +53,7 @@ Forum Diskusi - Covid App
     <div id="output"></div>
     <script>
         var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        var form = document.getElementById('form');
         var submitButton = document.getElementById('submit');
         function alert(message, type) {
             var wrapper = document.createElement('div')
@@ -75,6 +76,7 @@ Forum Diskusi - Covid App
                 success: function () {
                     submitButton.style.display = "none"
                     alert("Topik baru berhasil ditambahkan", 'success')
+                    form.reset();
                 },
             })
         })
