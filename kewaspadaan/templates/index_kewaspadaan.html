@@ -74,8 +74,21 @@
       </script>
     </div>
   
-  <h4>Indeks di atas dibuat dengan...</h4>
+  <br>
   <h4 class="blockquote">*Peta indeks kewaspadaan di atas dibuat dengan referensi dari situs <a href = 'https://kawalcovid19.id/'>kawalcovid19</a> dengan pengubahan seperlunya.</h4>
-  </div>
+  <br>
+
+  <h2><b>Saran Indikator</b></h2>
+  <p class="blockquote">Silakan masukkan saran indikator yang perlu ditambahkan pada form di bawah</p>
+  <form method="POST" action="" class="form-group"> 
+    {% csrf_token %}
+      <label for="saran" style="color: black">Indikator</label>
+      <input type="text" id="saran" class="form-control" placeholder="saran indikator yang ingin ditambah" name="indikator" >
+    <br>
+        <input type ="submit" value="Submit" class="submitButton">
+  </form>
+  <br>
+
+</div>
   
 {% endblock %}

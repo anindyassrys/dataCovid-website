@@ -1,10 +1,8 @@
-fetch('https://api.kawalcorona.com/indonesia')
+// fetch data from API
+fetch('https://corona.lmao.ninja/v2/countries/indonesia')
 .then((response)=>{
     return response.json();
 })
-.then((response)=>{
-    console.log(res)
-    var positif = document.getElementById('positif')
-
-    positif.append(positif)
+.then((data)=>{
+    document.getElementById("todayCases").innerHTML = data.todayCases;
 })

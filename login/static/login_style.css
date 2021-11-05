@@ -1,0 +1,22 @@
+.masuk {
+    background-color: #b19d8f; 
+    border-radius: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 24px;
+    height: 50px;
+    margin-top: 5px;
+    outline: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: .2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+}   
+
+.masuk:hover {
+    background: inherit;
+    color: #4b6148;
+    border-bottom: 2px solid
+}
