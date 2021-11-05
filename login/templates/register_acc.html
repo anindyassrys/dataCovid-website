@@ -9,7 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-<script src="sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="{% static 'regis_style.css' %}"/>
 {% endblock css %}
 </head>
@@ -71,8 +71,8 @@ Registration
 							{{form.password2}}
 						</div>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-							<button type="submit" class="regis">Register Account</button>
-							<button type="reset" class="remove">Reset</button>
+							<button class="regis">Register Account</button>
+							<button class="remove">Reset</button>
 				   		</div>
 					</form>
 				</div>
@@ -82,7 +82,9 @@ Registration
 				<!-- <div id="username-n">
 					<p id="username-n-p"></p>
 				  </div> -->
-				  {% if form.errors|length < 7 %} {{ form.errors }} {% endif %}
+				  <dd style="color: #752222;">
+					{{ form.errors }}
+				  </dd>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Already have an account? <a href="{% url 'login:login' %}" class="ml-2">Login</a>
@@ -92,15 +94,21 @@ Registration
 		</div>
 	</div>
 
-    <!-- <script> -->
-		<script>
+	<script type="text/javascript">
 		$(".remove").click(function(){
-			var id = $(this).parents("tr").attr("id");
+			var result = $(this).parents("tr").attr("id");
 			if(confirm('This action cannot be undone. Are you sure want to delete this form?')) {
             $.ajax({
                 url: '',
                 type: 'GET',
-                data: {id: id},
+                data: {
+					csrfmiddlewaretoken: '{{ csrf_token }}',
+					first_name: $('#first_name').val(), 
+					last_name: $('#last_name').val(), 
+					username: $('#username').val(), 
+					email: $('#email').val(), 
+					password1: $('#password1').val(), 
+					password2: $('#password2').val()},
                 error: function() {
                 alert('Something is wrong, could not delete record');
                 },
@@ -113,131 +121,67 @@ Registration
         }
     });
 	</script>
-	<!-- // var changeTimer = false;
-	// $("#id_username").on("change", function () {
-	// 	let username_ajax = $("#id_username").val();
-	// 	if (changeTimer !== false) clearTimeout(changeTimer);
-    //     changeTimer = setTimeout(function () {
-	// 		$.ajax({
-	// 			type: "POST",
-    //         	url: "userValidation",
-    //         	data: {
-	// 				csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
-	// 				usename: username_ajax,
-    //         },
-    //         success: function (response) {
-	// 			$("#submit").prop("disabled", false);
-	// 			document.getElementById("username-n").innerText = "Username available";
-	// 			document.getElementById("username-n").style.color = "#3836c9";
-    //         },
-    //         error: function (xhr, ajaxOptions, thrownError) {
-	// 			$("#submit").prop("disabled", true);
-    //           	document.getElementById("username-n").innerText = "Sorry, this username is already taken";
-	// 			document.getElementById("username-n").style.color = "#d60000";
-    //         },
-    //       });
-    //       changeTimer = false;
-    //     }, 300);
-    //   });
-//       $(document).ready(function() {
+	<script>
+		var form = document.getElementsByTagName('form');
+		// var first_name 
+		// var last_name 
+		// var username 
+		// var email 
+		// var password1 
+		// var password2
+		$(".regis").click(function() {
 
-//         $("#form").on('submit', function(event) {
-// 			event.preventDefault();
-        
-// 			var first_name = $("#first_name").val();
-// 		  	var last_name = $("#last_name").val();
-// 			var username = $("#username").val();
-// 			var email = $("#email").val();
-// 			var password1 = $("#password1").val();
-// 			var password2 = $("#password2").val();
+		if ($('#first_name'.length == "" || $('#last_name'.length == "" || $('#email'.length == "" || 
+		($('username'.length == "" || $('#password1'.length == "" || $('#password2'.length == "")))))))) {
 
-//         if (first_name.length == "" && last_name.length == "") {
+            Swal.fire({
+				type: 'warning',
+              	title: 'Oops...',
+              	text: 'Semua Kolom Wajib Diisi!',
+				setInterval: '2000'
+            });
 
-//             Swal.fire({
-// 				type: 'warning',
-//               	title: 'Oops...',
-//               	text: 'Nama Wajib Diisi!'
-//             });
+		} else {
+            $.ajax({
+              	url: "",
+              	type: "POST",
+              	data: {
+					csrfmiddlewaretoken: '{{ csrf_token }}',
+					first_name: $('#first_name').val(), 
+					last_name: $('#last_name').val(), 
+					username: $('#username').val(), 
+					email: $('#email').val(), 
+					password1: $('#password1').val(), 
+					password2: $('#password2').val()
+					// "first_name":first_name,
+					// "last_name":last_name,
+					// "username":username,
+					// "email":email,
+					// "password1":password1,
+					// "password2":password2
+              	},
 
-// 		} else if(email.length == "") {
-
-//             Swal.fire({
-//               	type: 'warning',
-//               	title: 'Oops...',
-//               	text: 'E-mail Wajib Diisi!'
-//             });	
-
-//         } else if(username.length == "") {
-
-//             Swal.fire({
-//               	type: 'warning',
-//               	title: 'Oops...',
-//               	text: 'Username Wajib Diisi!'
-//             });
-
-//           } else if(password1.length == "" && password2.length == "") {
-
-//             Swal.fire({
-//               	type: 'warning',
-//               	title: 'Oops...',
-//              	text: 'Password Wajib Diisi!'
-//             });
-
-//           } else {
-
-//             $.ajax({
-
-//               	url: "",
-//               	type: "POST",
-//               	data: {
-//                   	"first_name": first_name,
-// 					"last_name" : last_name,
-//                   	"username": username,
-// 					"email" : email,
-//                   	"password1": password1,
-// 					"password2": password2
-//               	},
-
-//             success:function(response){
-
-//                 if (response == "success") {
-// 					Swal.fire({
-//                     	type: 'success',
-//                     	title: 'Registrasi Berhasil!',
-//                     	text: 'Silakan login!'
-//                   	});
-
-// 				  	$("#first_name").val();
-// 		  			$("#last_name").val();
-// 					$("#username").val();
-// 					$("#email").val();
-// 					$("#password1").val();
-// 					$("#password2").val();
-
-//                 } else {
-// 					Swal.fire({
-//                     	type: 'error',
-//                     	title: 'Registrasi Gagal!',
-//                     	text: 'Silakan coba lagi!'
-//                   	});
-
-//                 }
-
-//             console.log(response);
-// 		},
-
-//             error:function(response){
-// 				Swal.fire({
-//                 	type: 'error',
-//                 	title: 'Opps!',
-//                 	text: 'server error!'
-// 				});
-// 			}
-// 		}) 
-// 	}
-// }); 
-// });
-    </script> -->
+            success:function(response){
+				if (response == "success"){
+					Swal.fire({
+                    	type: 'success',
+                    	title: 'Registrasi Berhasil!',
+                    	text: 'Silakan login!',
+						setInterval: '2000'
+					});
+				} else {
+					Swal.fire({
+                    type: 'error',
+                    title: 'Registrasi Gagal!',
+                    text: 'Silakan coba lagi!'
+                  });
+				}
+				console.log(response);
+				},
+			}) 
+		}
+	}); 
+	</script>
 
 	<script>
 		var form_fields = document.getElementsByTagName('input')

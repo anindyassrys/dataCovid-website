@@ -9,7 +9,41 @@
 {% block content %}
   <head>
     <title>Indeks Kewaspadaan</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          changeIframe();
+        });
+        function changeIframe(){
+            if (document.getElementById("indikator").value == "1") {
+                $.ajax({
+                    success: function(result){
+                    $("#judul").text("Kasus Harian");
+                    $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/gn31x/1/");
+                }});
+            }else if (document.getElementById("indikator").value == "2") {
+                $.ajax({
+                    success: function(result){
+                    $("#judul").text("Kasus Aktif");
+                    $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/hMMxg/1/");
+                }});
+            }else if (document.getElementById("indikator").value == "3") {
+                $.ajax({
+                    success: function(result){
+                    $("#judul").text("Case Fatality Rate (CFR)");
+                    $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/3FH2E/1/");
+                }});
+            }else if (document.getElementById("indikator").value == "4") {
+                $.ajax({
+                    success: function(result){
+                    $("#judul").text("Rasio Lacak Isolasi (RLI)");
+                    $("#datawrapper-chart").attr("src","https://datawrapper.dwcdn.net/b1RaZ/1/");
+                }});
+            }
+        }
+    </script>
   </head>
+
   <div class = "container" style="margin-left: 33px" >
     <br><br><br><br>
   <h1 class="display-4"><b>Indeks Kewaspadaan Covid-19</b></h1>
@@ -17,7 +51,7 @@
   <h3 class="blockquote">Indeks ini menunjukkan besarnya resiko Anda tertular Covid pada setiap wilayah di Indonesia<br>
       Selalu Tingkatkan kewaspadaan dan Perketat protokol kesehatan, khususnya pada daerah-daerah rawan Covid-19</h3>
     <div style="text-align: center;">
-      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/DfOth/5/" 
+      <iframe class = "test" title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/DfOth/5/" 
       scrolling="no" frameborder="1" style="width: 0; min-width: 100% !important; border: none; padding: none;" height="392" >
       </iframe>
       <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
@@ -26,46 +60,24 @@
       </script>
     </div>
   <br>
-  <h2 class="blockquote">Peta indeks ini juga disajikan dengan berbagai indikator berbeda:</h2>
+  
+  <h2 class="blockquote">Pilih Indikator Resiko lainnya:</h2>
+  <form>
+    <div class="form-group">
+      <label for="indikator">Pilih Indikator</label>
+      <select class="form-control" id="indikator" onchange="changeIframe()">
+        <option value="1">Kasus Harian</option>
+        <option value="2">Kasus Aktif</option>
+        <option value="3">Case Fatality Rate</option>
+        <option value="4">Rasio Lacak Isolasi</option>
+      </select>
+    </div>
+  </form>
+  <br>
 
-  <h2 class="display-6"><b>Kasus Harian</b></h2>
+  <h2 class="display-6" id="judul" style="font-weight: bold;">Kasus Harian</h2>
     <div style="text-align: center;">
-      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/gn31x/1/" 
-      scrolling="no" frameborder="1" style="width: 0; min-width: 100% !important; border: none; padding: none;" height="392" >
-      </iframe>
-      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
-      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
-      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-      </script>
-    </div>
-  <br>
-  <h2 class="display-6"><b>Kasus Aktif</b></h2>
-    <div style="text-align: center;">
-      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/hMMxg/1/" 
-      scrolling="no" frameborder="1" style="width: 0; min-width: 100% !important; border: none; padding: none;" height="392" >
-      </iframe>
-      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
-      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
-      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-      </script>
-    </div>
-  <br>
-  <h2 class="display-6"><b>Case Fatality Rate (CFR)</b></h2>
-  <h4>CFR menunjukkan tingkat kematian untuk kasus positif Covid-19</h4>
-    <div style="text-align: center;">
-      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/3FH2E/1/" 
-      scrolling="no" frameborder="1" style="width: 0; min-width: 100% !important; border: none; padding: none;" height="392" >
-      </iframe>
-      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
-      {var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++)
-      {if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-      </script>
-    </div>
-  <br>
-  <h2 class="display-6"><b>Rasio Lacak Isolasi (RLI)</b></h2>
-  <h4>RLI adalah perbandingan jumlah suspect dan kontak dengan jumlah kasus terkonfirmasi Covid-19</h4>
-    <div style="text-align: center;">
-      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart-DfOth" src="https://datawrapper.dwcdn.net/b1RaZ/1/" 
+      <iframe title="Indeks Kewaspadaan" aria-label="Map" id="datawrapper-chart" src="https://datawrapper.dwcdn.net/gn31x/1/" 
       scrolling="no" frameborder="1" style="width: 0; min-width: 100% !important; border: none; padding: none;" height="392" >
       </iframe>
       <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"])
