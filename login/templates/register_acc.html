@@ -94,7 +94,7 @@ Registration
 		</div>
 	</div>
 
-		<script>
+	<script>
 		$(".remove").click(function(){
 			var id = $(this).parents("tr").attr("id");
 			if(confirm('This action cannot be undone. Are you sure want to delete this form?')) {
@@ -116,12 +116,12 @@ Registration
 	</script>
 	<script>
 		var form = document.getElementsByTagName('form');
-		var first_name 
-		var last_name 
-		var username 
-		var email 
-		var password1 
-		var password2
+		// var first_name 
+		// var last_name 
+		// var username 
+		// var email 
+		// var password1 
+		// var password2
 		$(".regis").click(function() {
 
 		if ($('#first_name'.length == "" && $('#last_name'.length == ""))) {
@@ -172,16 +172,31 @@ Registration
 					email: $('#email').val(), 
 					password1: $('#password1').val(), 
 					password2: $('#password2').val()
+					// "first_name":first_name,
+					// "last_name":last_name,
+					// "username":username,
+					// "email":email,
+					// "password1":password1,
+					// "password2":password2
               	},
 
-            success:function(){
+            success:function(response){
+				if (response == "success"){
 					Swal.fire({
                     	type: 'success',
                     	title: 'Registrasi Berhasil!',
                     	text: 'Silakan login!',
 						setInterval: '2000'
 					});
+				} else {
+					Swal.fire({
+                    type: 'error',
+                    title: 'Registrasi Gagal!',
+                    text: 'Silakan coba lagi!'
+                  });
 				}
+				console.log(response);
+				},
 			}) 
 		}
 	}); 
