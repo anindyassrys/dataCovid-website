@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Indikator
 from django.contrib.auth.decorators import login_required
-from django.http.response import HttpResponseRedirect
 from .forms import SaranForm
 
 def kewaspadaan(request):
@@ -15,6 +14,5 @@ def add(request):
 
     if request.method == 'POST' and form.is_valid():
         form.save()
-        return HttpResponseRedirect('indeks_kewaspadaan.html')
     
     return render(request, 'index_kewaspadaan_form.html', {'form':form})
