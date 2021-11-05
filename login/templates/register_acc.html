@@ -91,8 +91,8 @@
                 {{form.password2}}
               </div>
               <div style="display: flex; width: 100%">
-                <p>Tipe pengguna</p>
-                {{form.user_choices}}
+                <!-- <p>Tipe pengguna</p>
+                {{form.user_choices}} -->
               </div>
               <div class="d-flex justify-content-center mt-3 login_container">
                 <button type="submit" class="regis">Register Account</button>
@@ -176,9 +176,10 @@
               Swal.fire({
                 type: "success",
                 title: "Registrasi Berhasil!",
-                text: "Silakan login!",
-                setInterval: "2000",
+                text: "Silakan login!"
               });
+			  
+			  setTimeout(function(){ window.location.href = '/login'; }, 3000);
               console.log(response);
             },
           });
