@@ -2,13 +2,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 
-USER_ROLE = [
-    ('tenaga kesehatan', 'Tenaga Kesehatan'),
-    ('masyarakat umum', 'Masyarakat Umum'),
-]
+# User_CHOICES = [
+#     ('tenaga kesehatan', 'Tenaga Kesehatan'),
+#     ('masyarakat umum', 'Masyarakat Umum'),
+# ]
 
 class createUserForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
-		user_role = forms.CharField(label = "Tipe pengguna", widget = forms.RadioSelect(choices=USER_ROLE))
+		# User_CHOICES = forms.CharField(label = "Tipe pengguna", widget = forms.RadioSelect(choices=User_CHOICES))

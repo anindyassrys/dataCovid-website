@@ -72,7 +72,7 @@ Registration
 						</div>
 						<div style="display: flex; width: 100%">
 							<p>Tipe pengguna</p>
-							{{ form.user_role }}
+							{{form.user_choices}}
 						</div>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
 							<button class="regis">Register Account</button>
@@ -129,26 +129,30 @@ Registration
 	<script>
 		var form = document.getElementById('form');
 		var first_name = $("#first_name").val();
-		var fname = first_name.length;
-		console.log(fname);
-		// var last_name 
-		// var username 
-		// var email 
-		// var password1 
-		// var password2
+		// var fname = first_name.length;
+		// console.log(fname);
+		var last_name 
+		var username 
+		var email 
+		var password1 
+		var password2
 		$(".regis").click(function() {
-
-		// if ($('#first_name'.length == "" || $('#last_name'.length == "" || $('#email'.length == "" || 
-		// ($('username'.length == "" || $('#password1'.length == "" || $('#password2'.length == "")))))))) {
+		
+		function validator(){	
+		if ($('#first_name'.length == "" || $('#last_name'.length == "" || $('#email'.length == "" || 
+		($('username'.length == "" || $('#password1'.length == "" || $('#password2'.length == "")))))))) {
 			// console.log(first_name);
-			if(fname == 0){
+			// if(fname == 0){
             Swal.fire({
 				type: 'warning',
               	title: 'Oops...',
               	text: 'Semua Kolom Wajib Diisi!'
             });
+		}
 			console.log("test");
 
+		if(validator()){
+			;	
 		} else {
             $.ajax({
               	url: "",
@@ -161,12 +165,6 @@ Registration
 					email: $('#email').val(), 
 					password1: $('#password1').val(), 
 					password2: $('#password2').val()
-					// "first_name":first_name,
-					// "last_name":last_name,
-					// "username":username,
-					// "email":email,
-					// "password1":password1,
-					// "password2":password2
               	},
 
             success:function(response){
@@ -187,7 +185,8 @@ Registration
 				},
 			}) 
 		}
-	}); 
+	}
+}); 
 	</script>
 
 	<script>
