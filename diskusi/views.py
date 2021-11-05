@@ -18,12 +18,13 @@ def add_diskusi(request):
         title = request.POST.get("title")
         message = request.POST.get("message")
         is_anonymous = request.POST.get("is_anonymous", False)
+        print(is_anonymous)
         form = DiscussionForm(request.POST or None)
         if form.is_valid() and request.method == "POST":
             form.title = title
             form.message = message
             tempForm = form.save(commit=False)
-            if not is_anonymous:
+            if int(is_anonymous) == 0:
                 tempForm.user = request.user
             tempForm.save()
             return HttpResponseRedirect("/diskusi")

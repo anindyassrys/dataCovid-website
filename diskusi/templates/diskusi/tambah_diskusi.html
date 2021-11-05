@@ -55,6 +55,14 @@ Forum Diskusi - Covid App
         var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
         var form = document.getElementById('form');
         var submitButton = document.getElementById('submit');
+        var is_anon
+        if($('#is_anon').prop("checked")){
+            is_anon = 1
+        } else {
+            is_anon = 0
+        }
+
+
         function alert(message, type) {
             var wrapper = document.createElement('div')
             wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
@@ -69,7 +77,7 @@ Forum Diskusi - Covid App
                 data: {
                     title: $('#title').val(),
                     message: $('#message').val(),
-                    is_anonymous: $('#is_anon').prop("checked"),
+                    is_anonymous: is_anon,
                     csrfmiddlewaretoken: '{{ csrf_token }}',
                     dataType: "json",
                 },
