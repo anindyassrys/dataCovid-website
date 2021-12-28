@@ -1,6 +1,7 @@
 import json
 from django.contrib.auth.decorators import login_required
-from django.http.response import HttpResponseRedirect
+from django.core import serializers
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Wilayah, RumahSakit
 from .forms import RSForm
@@ -26,3 +27,13 @@ def add(request):
         form = RSForm()
     
     return render(request, 'rujukan/rujukan_forms.html', {'form': form})
+
+def jsonRS(request):
+
+    data = serializers.serialize('json', RumahSakit.objects.all())
+    return HttpResponse(data, content_type="application/json")
+
+def jsonWilayah(request):
+
+    data = serializers.serialize('json', Wilayah.objects.all())
+    return HttpResponse(data, content_type="application/json")
