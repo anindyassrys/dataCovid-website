@@ -42,6 +42,7 @@ HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 
 ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
 ALLOWED_HOSTS += ["covid-information-app.herokuapp.com"]
+CORS_ORIGIN_ALLOW_ALL = True
 
 if not PRODUCTION:
     ALLOWED_HOSTS += ['.localhost', '127.0.0.1', '[::1]']
@@ -75,6 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
