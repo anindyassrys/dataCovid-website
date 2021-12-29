@@ -25,8 +25,4 @@ sqlparse==0.4.2
 toml==0.10.2
 urllib3==1.26.6
 whitenoise==5.3.0
-<<<<<<< HEAD
 wrapt==1.12.1
-=======
-django-cors-headers==3.10.1
->>>>>>> 259e218a1895a38a9ec00eb50a55d2fa4a37b7ce
