@@ -42,6 +42,7 @@ HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 
 ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
 ALLOWED_HOSTS += ["covid-information-app.herokuapp.com"]
+ALLOWED_HOSTS += ["10.0.2.2"]
 CORS_ORIGIN_ALLOW_ALL = True
 
 if not PRODUCTION:

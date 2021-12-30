@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect 
+from django.views.decorators.csrf import csrf_exempt
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -9,7 +10,7 @@ from django.contrib import messages
 from .models import *
 from .forms import createUserForm
 
-
+@csrf_exempt
 def regisPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -28,6 +29,7 @@ def regisPage(request):
 		context = {'form':form}
 		return render(request, 'register_acc.html', context)
 
+@csrf_exempt
 def loginPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -47,6 +49,7 @@ def loginPage(request):
 		context = {}
 		return render(request, 'login_acc.html', context)
 
+@csrf_exempt
 def logoutUser(request):
 	logout(request)
 	return redirect('login:login')
