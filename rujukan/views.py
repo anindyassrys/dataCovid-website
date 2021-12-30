@@ -22,7 +22,7 @@ def add(request):
         form = RSForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('rujukan/rumah_sakit_rujukan.html')
+            return HttpResponseRedirect('/rumah-sakit-rujukan')
     else:
         form = RSForm()
     
@@ -30,7 +30,12 @@ def add(request):
 
 def jsonRS(request):
 
-    data = serializers.serialize('json', RumahSakit.objects.all())
+    rss = dict()
+    for ob in Wilayah.objects.all():
+        rss[ob.nama] = json.loads(serializers.serialize('json', Wilayah.objects.get(nama=ob.nama).daftarRS.all()))
+
+    print(rss)
+    data = json.dumps(rss)
     return HttpResponse(data, content_type="application/json")
 
 def jsonWilayah(request):

@@ -19,6 +19,7 @@ def vaksinasi(request):
     return render(request, 'vaksinasi.html', context)
 
 def kategori(request):
+    update()
     data = serializers.serialize('json', Kategori.objects.all())
     return HttpResponse(data, content_type="application/json")
 
