@@ -26,23 +26,24 @@ def regisPage(request):
   else:
     return JsonResponse(form.errors, status=400)
 
-# def regisPage(request):
-# 	if request.user.is_authenticated:
-# 		return redirect('home')
-# 	else:
-# 		form = createUserForm()
-# 		if request.method == 'POST':
-# 			form = createUserForm(request.POST)
-# 			if form.is_valid():
-# 				form.save()
-# 				user = form.cleaned_data.get('username')
-# 				messages.success(request, '     Account was created for ' + user)
+@csrf_exempt
+def regisPageDesktop(request):
+	if request.user.is_authenticated:
+		return redirect('home')
+	else:
+		form = createUserForm()
+		if request.method == 'POST':
+			form = createUserForm(request.POST)
+			if form.is_valid():
+				form.save()
+				user = form.cleaned_data.get('username')
+				messages.success(request, '     Account was created for ' + user)
 
-# 				return redirect('login:login')
+				return redirect('login:login')
 			
 
-# 		context = {'form':form}
-# 		return render(request, 'register_acc.html', context)
+		context = {'form':form}
+		return render(request, 'register_acc.html', context)
 
 
 @csrf_exempt
@@ -70,24 +71,25 @@ def loginPage(request):
           "message": "Failed to login, check your email or password."
         }, status=401)
 
-# def loginPage(request):
-# 	if request.user.is_authenticated:
-# 		return redirect('home')
-# 	else:
-# 		if request.method == 'POST':
-# 			username = request.POST.get('username')
-# 			password =request.POST.get('password')
+@csrf_exempt
+def loginPageDesktop(request):
+	if request.user.is_authenticated:
+		return redirect('home')
+	else:
+		if request.method == 'POST':
+			username = request.POST.get('username')
+			password =request.POST.get('password')
 
-# 			user = authenticate(request, username=username, password=password)
+			user = authenticate(request, username=username, password=password)
 
-# 			if user is not None:
-# 				login(request, user)
-# 				return redirect('home')
-# 			else:
-# 				messages.info(request, 'Username or password is incorrect')
+			if user is not None:
+				auth(request, user)
+				return redirect('home')
+			else:
+				messages.info(request, 'Username or password is incorrect')
 
-# 		context = {}
-# 		return render(request, 'login_acc.html', context)
+		context = {}
+		return render(request, 'login_acc.html', context)
 
 @csrf_exempt
 def logoutUser(request):
