@@ -1,9 +1,12 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from .models import DataCovid
 from .forms import dataform
 from django.core import serializers
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 def datacovid(request):
@@ -34,3 +37,27 @@ def load_more(request):
         'posts': posts_json,
         'totalResult': totalData
     })
+
+@csrf_exempt
+def get_content(request):
+    res = []
+    content = DataCovid.objects.all()
+    for i in content:
+        dict = {
+            "daerah" : i.daerah,
+            "positif" : i.positif
+        }
+        res.append(dict)
+    data = json.dumps(res)
+    print(data) 
+    return HttpResponse(data, content_type='application/json')
+
+@csrf_exempt
+def post_content(request):
+    data = json.loads(request.body)
+    form = dataform(data)
+    form.save()
+
+    response = HttpResponse('success')
+    response.status_code = 200
+    return response
